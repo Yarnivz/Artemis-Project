@@ -57,7 +57,7 @@ header
     color: aqua;
 }
 
-button
+.nav-button
 {
     padding: 9px 25px;
     background-color: white;
@@ -68,7 +68,7 @@ button
     margin: 20px;
 }
 
-button:hover
+.nav-button:hover
 {
     background-color: aqua;
 }

@@ -11,6 +11,8 @@
     
     <body>
         
+        <!-- Creation Header -->
+
         <header>
 
             <!-- Navigation -->
@@ -22,26 +24,28 @@
 
                 <ul class="navigation">
 
-                    <li>
+                    <li class="li">
             
-                        <a href="home.html">
+                        <a href="home.html" class="a">
                             Home
                         </a>
             
                     </li>
                     
-                    <li>
+                    <li class="li">
             
-                        <a href="help.html">
+                        <a href="help.html" class="a">
                             Help    
                         </a>
                         
                     </li>
             
-                    <li>
-                        <a href="about-us.html">
+                    <li class="li">
+
+                        <a href="about-us.html" class="a">
                             About Us
                         </a>
+                    
                     </li>
                     
                 </ul>
@@ -50,15 +54,15 @@
 
             <!-- Log In & Sign Up -->
 
-            <div>
+            <div class="buttons">
 
-                <a class="log-in" href="log-in.html">
+                <a class="a" href="log-in.html">
                     <button class="nav-button">
                         Log In
                     </button>
                 </a>
                     
-                <a class="sign-up" href="sign-up.html">
+                <a class="a" href="sign-up.html">
                     <button class="nav-button">
                         Sign Up
                     </button>
@@ -68,14 +72,16 @@
 
         </header>
 
-        <form action="log-in.html" method="POST">
+        <br>
+        <br>
 
-            <!-- E-mail or Username-->
+        <form action="sign-up.html" method="POST">
+
             <label for="firstname">
                 First Name
             </label>
             <br>
-            <input type="text" placeholder="First Name" id="firstname" name="firstname">
+            <input type="text" placeholder="First Name" id="firstname" name="firstname" required>
 
             <br>
             <br>
@@ -84,7 +90,7 @@
                 Last Name
             </label>
             <br>
-            <input type="text" placeholder="Last Name" name="password" id="password">
+            <input type="text" placeholder="Last Name" name="password" id="password" required>
 
             <br>
             <br>
@@ -94,7 +100,7 @@
                 E-mail
             </label>
             <br>
-            <input type="text" placeholder="Email" id="email" name="email">
+            <input type="text" placeholder="Email" id="email" name="email" required>
 
             <br>
             <br>
@@ -103,13 +109,19 @@
                 Password
             </label>
             <br>
-            <input type="text" placeholder="Password" name="password" id="password">
+            <input type="text" placeholder="Password" name="password" id="password" required>
+
+            <br>
+            <br>
 
             <label for="confirm-password">
                 Confirm Password
             </label>
             <br>
-            <input type="text" placeholder="Confirm Password" name="confirm-password" id="confirm-password">
+            <input type="text" placeholder="Confirm Password" name="confirm-password" id="confirm-password" required>
+
+            <br>
+            <br>
 
             <button>
                 <a href=#>

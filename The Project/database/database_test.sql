@@ -1,0 +1,20 @@
+CREATE DATABASE test;
+
+DROP DATABASE test;
+
+CREATE TABLE users(
+users_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+firstname VARCHAR(255) NOT NULL,
+lastname VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
+psswd VARCHAR(255) NOT NULL,
+birthdate DATE NOT NULL
+);
+
+CREATE TABLE users_preferences(
+category_id INT NOT NULL PRIMARY KEY,
+users_id INT NOT NULL
+);
+
+ALTER TABLE users_preferences
+ADD FOREIGN KEY(users_id) REFERENCES users(users_id);

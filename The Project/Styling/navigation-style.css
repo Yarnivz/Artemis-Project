@@ -18,8 +18,8 @@ header
 
 .small-logo
 {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 100px;
 }
 
@@ -37,7 +37,7 @@ header
 .navigation .li
 {   
     display: inline-block;
-    padding: 0px 30px;
+    padding: 0px 20px;
 }
 
 .navigation .li .a

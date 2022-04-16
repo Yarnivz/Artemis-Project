@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome To BDAY</title>
+        <title>BDAY Sign Up</title>
         <link rel="stylesheet" href="Styling/navigation-style.css" type="text/css">
-        <link rel="stylesheet" href="Styling/home-style.css" type="text/css">
     </head>
     
     <body>
-
-
+        
         <!-- Creation Header -->
 
         <header>
@@ -77,89 +75,61 @@
         <br>
         <br>
 
+        <form action="sign-up.html" method="POST">
 
-
-
-        <!-- Creation Instruction about the site -->
-
-        <!-- Main Logo Homepage -->
-
-        <img class="main-logo" src="assets/images/LogoTransparent.png" alt="Logo">
-        
-        
-        
-        
-        <!-- Instruction about our site -->
-
-        <div class="title">
-            <h1>
-                HOW DOES B-Day WORKS?
-            </h1>
-        </div>
-
-        <br>
-        
-        <h2>
-            STEP 1
-        </h2>
-
-        <img class="instruction" src="assets/images/LogoTransparent.png" alt="Step1">
-        
-        <p>
-            "Text for the step 1"
-        </p>
-        
-        <br>
-
-        <h2>
-            STEP 2
-        </h2>
-        
-
-        <img class="instruction" src="assets/images/LogoTransparent.png" alt="Step2">
-        
-        <p>
-            "Text for the step 2"
-        </p>
-        
-        <br>
-        
-        <h2>
-            STEP 3
-        </h2>
-        
-        <img class="instruction" src="assets/images/LogoTransparent.png" alt="Step3">
-        
-        <p>
-            "Text for the step 3"
-        </p>
-        
-        <br>
-
-        <!-- Info About Us -->
-        <div class="small-info-about-us">
-
-            <h1>
-                About us
-            </h1>
-    
+            <label for="firstname">
+                First Name
+            </label>
             <br>
+            <input type="text" placeholder="First Name" id="firstname" name="firstname" required>
+
+            <br>
+            <br>
+
+            <label for="lastname">
+                Last Name
+            </label>
+            <br>
+            <input type="text" placeholder="Last Name" name="password" id="password" required>
+
+            <br>
+            <br>
+
             
-            <h2>
-                We're a team of 4 with brilliant ideas and
-                
-            <h2>
+            <label for="e-mail">
+                E-mail
+            </label>
+            <br>
+            <input type="text" placeholder="Email" id="email" name="email" required>
 
             <br>
+            <br>
 
-            <h2>
-                <a class="more-about-us" href="about-us.html">
-                    More..
+            <label for="password">
+                Password
+            </label>
+            <br>
+            <input type="text" placeholder="Password" name="password" id="password" required>
+
+            <br>
+            <br>
+
+            <label for="confirm-password">
+                Confirm Password
+            </label>
+            <br>
+            <input type="text" placeholder="Confirm Password" name="confirm-password" id="confirm-password" required>
+
+            <br>
+            <br>
+
+            <button>
+                <a href=#>
+                    Sign Up
                 </a>
-            </h2>        
-                    
-            </div>
+            </button>
 
+        </form>
 
     </body>
 

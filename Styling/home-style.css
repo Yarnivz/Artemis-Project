@@ -1,0 +1,54 @@
+body
+{
+    background-color: rgb(255, 152, 202);
+
+}
+
+.title
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+}
+
+.main-logo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 500px;
+}
+
+.instruction
+{
+    width: 150px;
+    height: 150px;
+}
+
+.small-info-about-us
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 10%;
+    background-color: lightskyblue;
+}
+
+.more-about-us
+{
+    padding: 9px 25px;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+    margin: 20px;
+}
+
+.more-about-us:hover
+{
+    background-color: aqua;
+}

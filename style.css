@@ -193,6 +193,16 @@ button:hover{
     width: 50%;
 }
 
+.pict1
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+
+}
+
 .content-tour{
     text-align: center;
 }

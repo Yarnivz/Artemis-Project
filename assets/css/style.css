@@ -6,7 +6,7 @@
 
     height: 100vh;
     width: 100%;
-    background-image: url(assets/background.png);
+    background-image: url(../images/background.png);
     background-position: center;
     background-size: cover;
     padding-left: 5%;
@@ -148,26 +148,5 @@ button{
    
 }
 button:hover{
-	background: #afd6ee;
-}
-.login{
-	height: 460px;
-	background: #eee;
-	border-radius: 60% / 10%;
-	transform: translateY(-180px);
-	transition: .8s ease-in-out;
-}
-.login label{
-	color: #3b8a70;
-	transform: scale(.6);
-}
-
-#chk:checked ~ .login{
-	transform: translateY(-500px);
-}
-#chk:checked ~ .login label{
-	transform: scale(1);	
-}
-#chk:checked ~ .signup label{
-	transform: scale(.6);
+	background: #f34f9c;
 }

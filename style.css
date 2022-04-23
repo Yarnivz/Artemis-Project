@@ -234,6 +234,20 @@ button:hover{
 }
 .content p{
 
+<<<<<<< HEAD
+=======
+.pict1
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+
+}
+
+.content-tour{
+>>>>>>> bde5a9145e13a3f9bbd036a47d967fdc942859c8
     text-align: center;
     
 }

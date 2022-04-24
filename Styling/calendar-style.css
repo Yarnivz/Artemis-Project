@@ -43,20 +43,24 @@ body
 
 /* Weekdays */
 
-.week
+.header-week
 {
     margin: 0;
     padding: 10px 0;
-    background-color: rgb(122, 122, 122); 
+    background-color: rgb(120, 120, 120); 
 }
 
-.week li
+header
 {
     display: flex;
     justify-content: center;
 }
 
-
+.week li
+{
+    display: inline-block;
+    padding: 0px 30px;
+}
 
 .days
 {

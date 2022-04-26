@@ -20,4 +20,4 @@ var months =
 
 // To change the month
 document.querySelector(".month-name2").innerHTML
-=months[1];
+=months[0];

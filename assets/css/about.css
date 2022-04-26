@@ -11,7 +11,7 @@
     display: flex;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(./assets/images/backgroundabout.png);
+    background-image: url(../images/backgroundabout.png);
     background-position: relative;
 }
 

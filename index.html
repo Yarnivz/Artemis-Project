@@ -8,43 +8,69 @@ Buy the selected gift and enjoy the Birthday! -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content-ppu="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="navbar">
-             <img src="assets/log2.png" class="logo" alt="index.html">
-            <nav>
+
+    <section class="header"> 
+        <nav>
+            
+            <div class="nav-links" id="navlinks"> 
+                <img src="assets/images/log2.png" class="logo" alt="index.html">
                 <ul>
-                    <li> <a href="index.html">Home</a></a> </li>
-                    <li> <a href="login.html">Login</a> </li>
-                    <li> <a href="singup.html">Sign Up</a> </li>
-                    <li> <a href="about.html">About Us</a> </li> 
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="login.html">LOGIN</a></li>
+                    <li><a href="singup.html">SIGNUP</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
                 </ul>
-            </nav>
-        </div>
-        <div class="center">
-        <h1>
-            BD IS YOUR FUTURE GIFT SHOP
-             </h1>
-             <p>
-                 "Let us help you to make a BD choice"
-             </p>
-             <a href="tour.html" class="hero-btn">
-                Quick Tour 
-             </a>
 
-            </br>
-            </br>
-
-             <div class="bdgif">
-
-                <img src="assets/giphy.gif" alt="">
-
-             </div>
             </div>
-    </div>
+          
+        </nav>
+        <div class="text-box">
+            <h1>
+            BD IS YOUR FUTURE GIFT SHOP
+            </h1>
+            <p>
+                "Let us help you to make a BD choice"
+            </p>
+            <a href="tour.html" class="hero-btn">
+                Quick Tour 
+            </a>
+            
+            </br>
+            </br>
+
+            
+    
+
+           
+
+
+        </div>
+        
+
+
+    </section>
+
+  
+
+   
+
+<script>
+
+    var navlinks = document.getElementById("navlinks");
+
+    function showMenu(){
+        navlinks.style.right= "0"
+    }
+    function hideMenu(){
+        navlinks.style.right="-200px";
+    }
+
+</script>
+
 </body>
-</html>
+</html> 

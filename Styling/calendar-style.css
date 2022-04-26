@@ -110,6 +110,14 @@ body
     border-style: solid;
     background-color: rgb(255, 255, 255);  
     border-radius: 100%;  
+    transition: background-color 0.2s;
+}
+
+.days li:hover:not(.selected-day)
+{
+    background-color: red;
+    border: 0.2rem solid gray;
+    cursor: pointer;
 }
 
 /* Stylin-Calendar */

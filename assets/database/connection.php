@@ -13,7 +13,7 @@
             die();
         }
 
-        return $conn
+        return $conn;
     }
     
 ?>

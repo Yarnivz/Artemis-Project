@@ -1,6 +1,9 @@
+//Setting up the main date
 var date = new Date();
+var currentMonth = date.getMonth();
+var currentYear = date.getFullYear();
 
-// Setting up months
+// Setting up months   
 
 var months = 
 [
@@ -19,5 +22,21 @@ var months =
 ]
 
 // To change the month
-document.querySelector(".month-name2").innerHTML
-=months[0];
+document.querySelector(".month-name2").innerHTML = months[currentMonth];
+
+document.querySelector(".year-name").innerHTML = currentYear;
+
+
+//button element for switching the date
+var previousButton = document.querySelector(".previous-button");
+var nextButton = document.querySelector(".next-button");
+
+previousButton.addEventListener("click",function(){
+   date.setMonth(currentMonth - 1);
+   calendarFunction();
+});
+
+nextButton.addEventListener("click",function(){
+   date.setMonth(currentMonth + 1);
+   calendarFunction();
+});

@@ -49,15 +49,18 @@ body
 .previous-button
 {
     position: relative;
-    right: 125px;
+    right: 100px;
     top: 15px;
+    cursor: pointer;
 }   
+
 
 .next-button
 {
     position: relative;
-    left: 125px;
+    left: 100px;
     top: 15px;
+    cursor: pointer;
 }
 
 /* Weekdays Style */

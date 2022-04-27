@@ -13,7 +13,7 @@
     
     $sqlInsert = "INSERT INTO `Users` (`firstName`, `lastName`, `gender`, `email`, `password`, `birthdate`) VALUES ('$firstname', '$lastname', '$gender', '$email', '$password', '$birthdate');";
 
-    mysqli_query($conn, $sqlInsert);
+    $result = mysqli_query($conn, $sqlInsert);
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +25,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Account succesfully created</h1>
+<h1>
+    <?php
+        if ($result == false){
+            echo "Account creation failed";
+            die();
+            header("Location: singup.html");
+        }
+        else {
+            echo "Account succesfully created";
+        }
+    ?>
+</h1>
 </body>
 </html>

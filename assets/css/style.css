@@ -352,15 +352,7 @@ p{
     position: center;
 }
 
-/*-- prefrences --*/
 
-.preference{
-	position: absolute;
-	width:100%;
-	height: 100%;
-   
-
-}
 
 label{
 	color: rgb(0, 0, 0);
@@ -374,7 +366,7 @@ label{
 	
 }
 input{
-	width: 10%;
+	width: 20%;
 	height: 20px;
 	background: #e0dede;
 	justify-content: center;
@@ -410,4 +402,15 @@ button:hover{
 }
 
 /*-- tour --*/
+.gender{
+    width: 25vh;
+    margin-left: 61vh;
+   
 
+}
+#pref1{
+    width: 18vh;
+    margin-left: 50vh;
+   
+
+}

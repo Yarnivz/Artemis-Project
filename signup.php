@@ -29,7 +29,6 @@
     <?php
         if ($result == false){
             echo "Account creation failed";
-            die();
             header("Location: singup.html");
         }
         else {

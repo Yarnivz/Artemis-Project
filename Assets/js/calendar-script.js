@@ -31,12 +31,28 @@ document.querySelector(".year-name").innerHTML = currentYear;
 var previousButton = document.querySelector(".previous-button");
 var nextButton = document.querySelector(".next-button");
 
+var monthNum = 0;
+
+function prev()
+{
+   if(i == 0)
+   {
+      document.getElementsByClassName('prev').disabled = fales;
+      document.getElementsByClassName('next')
+
+   }
+
+
+}
+
+
 previousButton.addEventListener("click",function(){
    date.setMonth(currentMonth - 1);
-   calendarFunction();
 });
 
+   
 nextButton.addEventListener("click",function(){
    date.setMonth(currentMonth + 1);
-   calendarFunction();
 });
+
+

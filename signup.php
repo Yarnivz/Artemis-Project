@@ -33,6 +33,7 @@
         }
         else {
             echo "Account succesfully created";
+            header("Location: preference.html");
         }
     ?>
 </h1>

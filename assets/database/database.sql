@@ -109,3 +109,6 @@ PRIMARY KEY (ShopID, PreferenceID),
 FOREIGN KEY (ShopID) REFERENCES Shops(ShopID),
 FOREIGN KEY (PreferenceID) REFERENCES Preferences(PreferenceID)
 );
+
+USE BDay;
+SELECT * FROM `Users` WHERE `Email` = "yarnitopper@gmail.com" AND `Password` = "password12345";

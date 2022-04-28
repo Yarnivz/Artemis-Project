@@ -22,8 +22,8 @@ var months =
 ]
 
 // To change the month
-document.querySelector(".month-name2").innerHTML = months[currentMonth];
 
+document.querySelector(".month-name2").innerHTML = months[currentMonth]
 document.querySelector(".year-name").innerHTML = currentYear;
 
 
@@ -31,28 +31,42 @@ document.querySelector(".year-name").innerHTML = currentYear;
 var previousButton = document.querySelector(".previous-button");
 var nextButton = document.querySelector(".next-button");
 
-var monthNum = 0;
+var i = 0;
+
+// Previous Button
 
 function prev()
 {
    if(i == 0)
    {
-      document.getElementsByClassName('prev').disabled = fales;
-      document.getElementsByClassName('next')
+      document.getElementsByClassName('prev').disabled = true;
+      document.getElementsByClassName('next').disabled = false;
+   }
+   else
+   {
+      i--;
+      return changeNum();
 
    }
-
-
 }
 
+function next()
+{
+   if(i == 11)
+   {
+      document.getElementById('prev').disabled = false;
+      document.getElementById('next').disabled = true;
+   }
+   else
+   {
+      i++;
+      return changeNum();
+   }
+}
 
-previousButton.addEventListener("click",function(){
-   date.setMonth(currentMonth - 1);
-});
+function changeNum()
+{
 
-   
-nextButton.addEventListener("click",function(){
-   date.setMonth(currentMonth + 1);
-});
+   return document.querySelector(".month-name2").innerHTML = months[i];
 
-
+}

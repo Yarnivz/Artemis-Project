@@ -404,7 +404,7 @@ button:hover{
 /*-- tour --*/
 .gender{
     width: 25vh;
-    margin-left: 61vh;
+    margin-left: 50vh;
    
 
 }
@@ -414,3 +414,150 @@ button:hover{
    
 
 }
+
+/*-- settings --*/
+
+.settings {
+   
+
+    padding: 3px 50px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 10px auto;
+    margin-left: 50vh;
+    width: 600px;
+}
+
+h4 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.tag{
+    text-align: center;
+    font-size: 15px;
+}
+
+
+
+
+.form-control {
+    border-radius: 10px
+}
+
+input[placeholder] {
+    font-weight: 500
+}
+
+.form-control:focus {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px 10px
+    
+}
+
+select {
+    display: block;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px 10px
+}
+
+select:focus {
+    outline: none
+}
+
+.button {
+    
+    color: #0c0d0f
+}
+
+.button:hover {
+    background: #afd6ee;
+    color: rgb(0, 0, 0)
+}
+
+
+.danger {
+    display: block;
+    width: 40%;
+    border: 1px;
+    border-radius: 10px;
+    height: 40px;
+    padding: 5px 10px
+}
+
+.danger:hover {
+    background: #e73424;
+    color: #fff
+}
+
+@media(max-width:576px) {
+    .settings {
+        padding: 25px 20px
+    }
+
+    #deactivate {
+        line-height: 18px
+    }
+}
+
+/*-- add friend --*/
+
+.find-friends-container{
+    padding: 3px 50px;
+    margin: 10px auto;
+    margin-left: 50vh;
+    width: 600px;
+}
+.find-friends-header{
+    background: none;
+
+}
+.find-friends-header .heading{
+    color: #020202;
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.find-friends-header .search{
+    position: relative;
+}
+.find-friends-header .search input{
+    border: none;
+    outline: none;
+    margin: 0 25px 25px 25px;
+    width: calc(100% - 100px);
+    font-size: 16px;
+    padding: 15px 50px;
+}
+.find-friends-header .search input::placeholder{
+
+    color: black;
+}
+.search1{
+    width: 15%;
+	height: 30px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: rgb(0, 0, 0);
+	background: #2472470e;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+    font-family: calibri;
+} 
+  

@@ -560,4 +560,44 @@ select:focus {
 	cursor: pointer;
     font-family: calibri;
 } 
-  
+
+  /*-- add event --*/
+#add_event_image{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15%;
+}
+.check{
+    
+    height: 10px;
+}
+.description{
+    display: block;
+    text-align: center;
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+   
+}
+#name{
+    font-size: 25px;
+}
+#person{
+    width: 250px;
+}
+#desc{
+    width: 600px;
+    height: 100px;
+}
+#pref1{
+    
+        display: inline-block;
+        margin-left: 300px;
+       
+    
+}
+#add{
+    height: 35px;
+    margin-top: 40px;
+}

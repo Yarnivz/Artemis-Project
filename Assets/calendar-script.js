@@ -29,25 +29,35 @@ document.querySelector(".year-name").innerHTML = currentYear;
 
 //To have each day in the calendar
 var days = "";
-var lastDay = new Date(currentYear, currentMonth + 1 , 0).getDate();
-var previousLastDays = new Date(currentYear, currentMonth,0).getDate();
+var lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+var previousLastDays = new Date(currentYear, currentMonth ,0).getDate();
 
 //The days of previous month
-var firstDayIndex = date.getDay();
+var firstDayIndex = date.getDay() + 6;
 
-for(var x = firstDayIndex; x > 0; x++)
+for(var x = firstDayIndex; x > 0; x--)
 {
-   var previousDays = '<li class="previous-days">' + (previousLastDays - x + 1) + '</li>';
+   var previousDays = '<li class="previous-days">' + (previousLastDays - x) + '</li>';
    days += previousDays;
 }
+
+
 
 //The days of the specific month
 for(var i = 1; i <= lastDay; i++)
 {
-   var usageDays = '<li>' + i +'</li>';
-   days += usageDays;
+   if(i === new Date().getDate() && date.getMonth() === new Date().getMonth())
+   {  
+      var usageDaysToday = '<li class = "today-day" >' + i +'</li>';
+      days += usageDaysToday;
+   }
+   else
+   {
+      var usageDays = '<li>' + i +'</li>';
+      days += usageDays;
+   }
 }
-daysOfMonth.innerHTML = days;
+
 
 //the days of next month
 var lastDayIndex = new Date(currentYear, currentMonth + 1, 0).getDay();
@@ -58,3 +68,38 @@ for(var j = 1; j <= nextDays; j++)
    var usageDays = '<li class="next-days">' + j +'</li>';
    days += usageDays;
 }
+daysOfMonth.innerHTML = days;
+
+
+
+
+
+
+
+// var previousButton =  document.querySelector(".previous-button");
+
+// previousButton.addEventListener('click', () => {
+//    if(months[currentMonth - 1] < currentMonth)
+//    {
+//       document.querySelector(".month-name2").innerHTML = months[currentMonth - 1];      
+//    }
+//    else
+//    {
+//       document.querySelector(".month-name2").innerHTML = months[currentMonth];      
+//    }
+// })
+
+
+
+// var nextButton = document.querySelector(".next-button");
+
+// nextButton.addEventListener('click', () => {
+//    if(months[currentMonth + 1] > currentMonth)
+//    {
+//       document.querySelector(".month-name2").innerHTML = months[currentMonth + 1];      
+//    }
+//    else
+//    {
+//       document.querySelector(".month-name2").innerHTML = months[currentMonth];      
+//    }
+// })

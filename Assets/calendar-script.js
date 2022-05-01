@@ -76,30 +76,30 @@ daysOfMonth.innerHTML = days;
 
 
 
-// var previousButton =  document.querySelector(".previous-button");
+var previousButton =  document.querySelector(".previous-button");
 
-// previousButton.addEventListener('click', () => {
-//    if(months[currentMonth - 1] < currentMonth)
-//    {
-//       document.querySelector(".month-name2").innerHTML = months[currentMonth - 1];      
-//    }
-//    else
-//    {
-//       document.querySelector(".month-name2").innerHTML = months[currentMonth];      
-//    }
-// })
+previousButton.addEventListener('click', () => {
+   if(months[currentMonth - 1] < currentMonth)
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth - 1];      
+   }
+   else
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth];      
+   }
+})
 
 
 
-// var nextButton = document.querySelector(".next-button");
+var nextButton = document.querySelector(".next-button");
 
-// nextButton.addEventListener('click', () => {
-//    if(months[currentMonth + 1] > currentMonth)
-//    {
-//       document.querySelector(".month-name2").innerHTML = months[currentMonth + 1];      
-//    }
-//    else
-//    {
-//       document.querySelector(".month-name2").innerHTML = months[currentMonth];      
-//    }
-// })
+nextButton.addEventListener('click', () => {
+   if(months[currentMonth + 1] > currentMonth)
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth + 1];      
+   }
+   else
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth];      
+   }
+})

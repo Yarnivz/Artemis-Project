@@ -23,7 +23,7 @@ var months =
 
 // To change the month
 
-document.querySelector(".month-name2").innerHTML = months[currentMonth]
+document.querySelector(".month-name2").innerHTML = months[currentMonth];
 document.querySelector(".year-name").innerHTML = currentYear;
 
 

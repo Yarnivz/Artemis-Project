@@ -37,10 +37,10 @@ CREATE TABLE Preferences (
 
 CREATE TABLE User_Preferences (
 `UserID` INT NOT NULL,
-`CategoryID` INT NOT NULL,
-PRIMARY KEY (UserID, CategoryID),
+`PreferenceID` INT NOT NULL,
+PRIMARY KEY (UserID, PreferenceID),
 FOREIGN KEY (UserID) REFERENCES Users(UserID),
-FOREIGN KEY (CategoryID) REFERENCES Preferences(PreferenceID)
+FOREIGN KEY (PreferenceID) REFERENCES Preferences(PreferenceID)
 );
 
 CREATE TABLE Event_Category (
@@ -110,5 +110,16 @@ FOREIGN KEY (ShopID) REFERENCES Shops(ShopID),
 FOREIGN KEY (PreferenceID) REFERENCES Preferences(PreferenceID)
 );
 
-USE BDay;
-SELECT * FROM `Users` WHERE `Email` = "yarnitopper@gmail.com" AND `Password` = "password12345";
+INSERT INTO `Preferences` (`Name`) VALUES ('sports');
+INSERT INTO `Preferences` (`Name`) VALUES ('gaming');
+INSERT INTO `Preferences` (`Name`) VALUES ('clothing');
+INSERT INTO `Preferences` (`Name`) VALUES ('decoration');
+INSERT INTO `Preferences` (`Name`) VALUES ('gardening');
+INSERT INTO `Preferences` (`Name`) VALUES ('gadgets');
+INSERT INTO `Preferences` (`Name`) VALUES ('books');
+INSERT INTO `Preferences` (`Name`) VALUES ('movies');
+INSERT INTO `Preferences` (`Name`) VALUES ('art');
+INSERT INTO `Preferences` (`Name`) VALUES ('beauty');
+INSERT INTO `Preferences` (`Name`) VALUES ('travel');
+INSERT INTO `Preferences` (`Name`) VALUES ('toys');
+INSERT INTO `Preferences` (`Name`) VALUES ('cooking');

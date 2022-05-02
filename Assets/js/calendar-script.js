@@ -35,7 +35,7 @@ var lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
 var previousLastDays = new Date(currentYear, currentMonth ,0).getDate();
 
 
-//The days of previous month
+//The unselected days of previous month
 var firstDayIndex = date.getDay() + 5;
 
 for(var x = firstDayIndex; x > 0; x--)
@@ -46,7 +46,7 @@ for(var x = firstDayIndex; x > 0; x--)
 
 
 
-//The days of the specific month
+//The selected days of the specific month
 for(var i = 1; i <= lastDay; i++)
 {
    if(i === new Date().getDate() && date.getMonth() === new Date().getMonth())
@@ -62,7 +62,7 @@ for(var i = 1; i <= lastDay; i++)
 }
 
 
-//the days of next month
+//the unselected days of next month
 var lastDayIndex = new Date(currentYear, currentMonth + 1, 0).getDay();
 var nextDays = 7 - lastDayIndex
 

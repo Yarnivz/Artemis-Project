@@ -35,31 +35,34 @@ Buy the selected gift and enjoy the Birthday! -->
           <img src="Assets/images/log2.png" alt="log2" id="add_event_image">
          
           <form action="/action_page.php">
+
           <fieldset>
             <legend id="name">This is a(n):</legend>
-            <div>
-                
-              <input type="radio"  class="check"  value="event"
-                     checked>
-              <label for="description" class="description" >Event</label>
-            </div>
-        
-            <div>
-              <input type="radio" class="check"  value="wedding">
-              <label for="description" class="description" >Wedding</label>
-            </div>
-        
-            <div>
-              <input type="radio"  class="check"   value="birthday">
-              <label for="description" class="description">Birthday</label>
-            </div>
-            <div>
-                <input type="radio"  class="check"   value="other">
-                <label for="description" class="description">Other</label>
-              </div>
 
-              
-            </fieldset>
+            <div>    
+
+              <label for="event" class="description" >Event</label>
+              <input type="radio"  class="check" name="event" value="event">
+            
+              <br>
+
+              <label for="wedding" class="description" >Wedding</label>
+              <input type="radio" class="check"  name="wedding" value="wedding">
+            
+              <br>
+
+              <label for="birthday" class="description">Birthday</label>
+              <input type="radio"  class="check"  name="birthday" value="birthday">
+            
+              <br>
+
+              <label for="others" class="description">Other</label>
+              <input type="radio"  class="check"  name="other" value="other">
+            
+            </div>
+
+          </fieldset>
+          </form>   
             
             <label for="fname">For Whom?</label>
               <input type="text" id="person" name="fname" >
@@ -84,6 +87,7 @@ Buy the selected gift and enjoy the Birthday! -->
                 <option value="toys">Kids&Toys</option>
                 <option value="cooking">Cooking</option>
             </select>
+
             <select name="preferences" id="pref1">
               <option value="none" selected>Select</option>
               <option value="sports">Sports</option>
@@ -108,23 +112,10 @@ Buy the selected gift and enjoy the Birthday! -->
       </div>
           
         </nav>
-       
-        
 
     </section>
 
-<script>
-
-    var navlinks = document.getElementById("navlinks");
-
-    function showMenu(){
-        navlinks.style.right= "0"
-    }
-    function hideMenu(){
-        navlinks.style.right="-200px";
-    }
-
-</script>
+<script src="Assets/js/add-event.js"></script>
 
 </body>
 </html> 

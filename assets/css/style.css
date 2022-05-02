@@ -644,5 +644,6 @@ select:focus {
 }
 #add{
     height: 35px;
-    margin-top: 40px;
+    margin-top: 40px;   
+    cursor: pointer;
 }

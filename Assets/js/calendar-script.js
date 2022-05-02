@@ -49,7 +49,7 @@ for(var x = firstDayIndex; x > 0; x--)
 //The selected days of the specific month
 for(var i = 1; i <= lastDay; i++)
 {
-   if(i === new Date().getDate() && date.getMonth() === new Date().getMonth())
+   if(i === new Date().getDate() && currentMonth === new Date().getMonth())
    {  
       var usageDaysToday = '<li class = "today-day" >' + i +'</li>';
       days += usageDaysToday;

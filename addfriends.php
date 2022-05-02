@@ -1,13 +1,17 @@
 <?php
 
-$connection = new mysqli('localhost', 'root', 'password', 'DB_NAME');
+    include "Assets/database/connection.php";
 
-$search = $_GET['search'];
-$search = $mysqli -> real_escape_string($search);
+    $connection = new mysqli('localhost', 'root', 'password', 'DB_NAME');
 
-$query = "SELECT username FROM member WHERE username LIKE '%".$search."%'";
-$result= $mysqli -> query($query);
+    $search = $_GET['search'];
+    $search = $mysqli -> real_escape_string($search);
 
-while($row = $result -> fetch_object()){
-    echo "<div id='link' onClick='addText(\"".$row -> username."\");'>" . $row -> username . "</div>";  
-}
+    $query = "SELECT username FROM member WHERE username LIKE '%".$search."%'";
+    $result= $mysqli -> query($query);
+
+    while($row = $result -> fetch_object()){
+        echo "<div id='link' onClick='addText(\"".$row -> username."\");'>" . $row -> username . "</div>";  
+    }
+
+?>

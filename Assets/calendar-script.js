@@ -32,6 +32,7 @@ var days = "";
 var lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
 var previousLastDays = new Date(currentYear, currentMonth ,0).getDate();
 
+
 //The days of previous month
 var firstDayIndex = date.getDay() + 6;
 

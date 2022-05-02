@@ -22,12 +22,9 @@ var months =
    "December", 
 ];
 
-<<<<<<< HEAD:Assets/js/calendar-script.js
 // To change the month
 
-=======
 //Setting The Date into the current month
->>>>>>> calendar:Assets/calendar-script.js
 document.querySelector(".month-name2").innerHTML = months[currentMonth];
 document.querySelector(".year-name").innerHTML = currentYear;
 
@@ -99,7 +96,6 @@ previousButton.addEventListener('click', () => {
 
 var nextButton = document.querySelector(".next-button");
 
-<<<<<<< HEAD:Assets/js/calendar-script.js
 var i = 0;
 
 // Previous Button
@@ -139,7 +135,7 @@ function changeNum()
    return document.querySelector(".month-name2").innerHTML = months[i];
 
 }
-=======
+
 nextButton.addEventListener('click', () => {
    if(months[currentMonth + 1] > currentMonth)
    {
@@ -150,4 +146,4 @@ nextButton.addEventListener('click', () => {
       document.querySelector(".month-name2").innerHTML = months[currentMonth];      
    }
 })
->>>>>>> calendar:Assets/calendar-script.js
+

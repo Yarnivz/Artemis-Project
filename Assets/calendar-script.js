@@ -34,7 +34,7 @@ var previousLastDays = new Date(currentYear, currentMonth ,0).getDate();
 
 
 //The days of previous month
-var firstDayIndex = date.getDay() + 6;
+var firstDayIndex = date.getDay() + 5;
 
 for(var x = firstDayIndex; x > 0; x--)
 {
@@ -70,10 +70,6 @@ for(var j = 1; j <= nextDays; j++)
    days += usageDays;
 }
 daysOfMonth.innerHTML = days;
-
-
-
-
 
 
 

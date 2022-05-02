@@ -35,8 +35,32 @@ Buy the selected gift and enjoy the Birthday! -->
           <img src="Assets/images/log2.png" alt="log2" id="add_event_image">
          
           <form action="/action_page.php">
-            <fieldset>
-              <legend id="name">This is a(n):</legend>
+
+          <fieldset>
+            <legend id="name">This is a(n):</legend>
+
+            <div>    
+
+              <label for="event" class="description" >Event</label>
+              <input type="radio"  class="check" name="event" value="event">
+            
+              <br>
+
+              <label for="wedding" class="description" >Wedding</label>
+              <input type="radio" class="check"  name="wedding" value="wedding">
+            
+              <br>
+
+              <label for="birthday" class="description">Birthday</label>
+              <input type="radio"  class="check"  name="birthday" value="birthday">
+            
+              <br>
+
+              <label for="others" class="description">Other</label>
+              <input type="radio"  class="check" name="" value="other">
+            
+            </div>
+
               
               <input type="radio" class="check" name="type_event" value="event">
               <label for="html" class="description">Event</label>
@@ -112,23 +136,11 @@ Buy the selected gift and enjoy the Birthday! -->
       </div>
           
         </nav>
-       
-        
 
     </section>
 
-<script>
-
-    var navlinks = document.getElementById("navlinks");
-
-    function showMenu(){
-        navlinks.style.right= "0"
-    }
-    function hideMenu(){
-        navlinks.style.right="-200px";
-    }
-
-</script>
+  <script src="Assets/js/add-event.js"></script>
+  <script src="Assets/js/selected-preference-add-event.js"></script>
 
 </body>
 </html> 

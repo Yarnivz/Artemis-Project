@@ -8,6 +8,8 @@
     $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = '$password';";
     
     $result = mysqli_query($conn,$sqlQuery);
+    $returnedRow = $result -> fetch_all(MYSQLI_ASSOC);
+    $loggedUser = $returnedRow[0];
 
 ?>
 
@@ -28,11 +30,11 @@
                 var_dump($sqlQuery);
                 echo "\r";
                 var_dump($result);
-                die();
                 header("Location:login.html");
             }
             else {
                 echo "Login Succesful!";
+                $_SESSION["loggedUser"] = $loggedUser;
                 header("Location:calendar.html");
             }
         

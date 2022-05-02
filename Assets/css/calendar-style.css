@@ -9,6 +9,8 @@ body
     background-color: rgb(55, 55, 55);
 }
 
+/* The whole set of the calendar */
+
 .container
 {
     width: 100%;
@@ -140,7 +142,7 @@ body
     opacity: 0.3;
 }
 
-.selected-day
+.today-day
 {
     border-color: rgb(0, 89, 255);
     border-style: solid;

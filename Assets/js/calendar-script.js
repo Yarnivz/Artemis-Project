@@ -2,9 +2,10 @@
 var date = new Date();
 var currentMonth = date.getMonth();
 var currentYear = date.getFullYear();
+var currentDay = date.getDate();
+var daysOfMonth = document.querySelector(".days");
 
 // Setting up months   
-
 var months = 
 [
    "January",
@@ -19,18 +20,86 @@ var months =
    "October", 
    "November", 
    "December", 
-]
+];
 
+<<<<<<< HEAD:Assets/js/calendar-script.js
 // To change the month
 
+=======
+//Setting The Date into the current month
+>>>>>>> calendar:Assets/calendar-script.js
 document.querySelector(".month-name2").innerHTML = months[currentMonth];
 document.querySelector(".year-name").innerHTML = currentYear;
 
 
-//button element for switching the date
-var previousButton = document.querySelector(".previous-button");
+//To have each day in the calendar
+var days = "";
+var lastDay = new Date(currentYear, currentMonth + 1, 0).getDate();
+var previousLastDays = new Date(currentYear, currentMonth ,0).getDate();
+
+
+//The days of previous month
+var firstDayIndex = date.getDay() + 6;
+
+for(var x = firstDayIndex; x > 0; x--)
+{
+   var previousDays = '<li class="previous-days">' + (previousLastDays - x) + '</li>';
+   days += previousDays;
+}
+
+
+
+//The days of the specific month
+for(var i = 1; i <= lastDay; i++)
+{
+   if(i === new Date().getDate() && date.getMonth() === new Date().getMonth())
+   {  
+      var usageDaysToday = '<li class = "today-day" >' + i +'</li>';
+      days += usageDaysToday;
+   }
+   else
+   {
+      var usageDays = '<li>' + i +'</li>';
+      days += usageDays;
+   }
+}
+
+
+//the days of next month
+var lastDayIndex = new Date(currentYear, currentMonth + 1, 0).getDay();
+var nextDays = 7 - lastDayIndex
+
+for(var j = 1; j <= nextDays; j++)
+{
+   var usageDays = '<li class="next-days">' + j +'</li>';
+   days += usageDays;
+}
+daysOfMonth.innerHTML = days;
+
+
+
+
+
+
+
+var previousButton =  document.querySelector(".previous-button");
+
+previousButton.addEventListener('click', () => {
+   if(months[currentMonth - 1] < currentMonth)
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth - 1];      
+   }
+   else
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth];      
+   }
+})
+
+
+
 var nextButton = document.querySelector(".next-button");
 
+<<<<<<< HEAD:Assets/js/calendar-script.js
 var i = 0;
 
 // Previous Button
@@ -70,3 +139,15 @@ function changeNum()
    return document.querySelector(".month-name2").innerHTML = months[i];
 
 }
+=======
+nextButton.addEventListener('click', () => {
+   if(months[currentMonth + 1] > currentMonth)
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth + 1];      
+   }
+   else
+   {
+      document.querySelector(".month-name2").innerHTML = months[currentMonth];      
+   }
+})
+>>>>>>> calendar:Assets/calendar-script.js

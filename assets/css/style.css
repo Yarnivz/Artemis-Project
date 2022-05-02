@@ -408,9 +408,12 @@ button:hover{
    
 
 }
-#pref1{
+.pref1{
     width: 18vh;
-    margin-left: 50vh;
+    /* margin-left: 50vh; */
+    display:inline-block;
+    margin-left: 15%;
+    margin-right: 4vh;
    
 
 }
@@ -571,14 +574,15 @@ select:focus {
 .check{
     
     height: 10px;
+    
 }
 .description{
     display: block;
     text-align: center;
-    margin-left: 40px;
+    
     margin-top: 10px;
     margin-bottom: 10px;
-   
+    
 }
 #name{
     font-size: 25px;
@@ -590,13 +594,7 @@ select:focus {
     width: 600px;
     height: 100px;
 }
-#pref1{
-    
-        display: inline-block;
-        margin-left: 300px;
-       
-    
-}
+
 #add{
     height: 35px;
     margin-top: 40px;

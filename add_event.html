@@ -35,32 +35,19 @@ Buy the selected gift and enjoy the Birthday! -->
           <img src="Assets/images/log2.png" alt="log2" id="add_event_image">
          
           <form action="/action_page.php">
-          <fieldset>
-            <legend id="name">This is a(n):</legend>
-            <div>
-                
-              <input type="radio"  class="check"  value="event"
-                     checked>
-              <label for="description" class="description" >Event</label>
-            </div>
-        
-            <div>
-              <input type="radio" class="check"  value="wedding">
-              <label for="description" class="description" >Wedding</label>
-            </div>
-        
-            <div>
-              <input type="radio"  class="check"   value="birthday">
-              <label for="description" class="description">Birthday</label>
-            </div>
-            <div>
-                <input type="radio"  class="check"   value="other">
-                <label for="description" class="description">Other</label>
-              </div>
-
+            <fieldset>
+              <legend id="name">This is a(n):</legend>
               
+              <input type="radio" class="check" name="type_event" value="event">
+              <label for="html" class="description">Event</label>
+              <input type="radio" class="check" name="type_event" value="wedding">
+              <label for=wedding" class="description">Wedding</label>
+              <input type="radio"   class="check" name="type_event" value="birthday">
+              <label for="birthday" class="description">Birthday</label>
+              <input type="radio"   class="check" name="type_event" value="other">
+              <label for="other" class="description">Other</label>
+
             </fieldset>
-            
             <label for="fname">For Whom?</label>
               <input type="text" id="person" name="fname" >
 
@@ -68,7 +55,8 @@ Buy the selected gift and enjoy the Birthday! -->
               <input type="text" id="desc" name="desc" >
 
               <label for="preferences" > Select your preferences</label>
-              <select name="preferences" id="pref1">
+             
+              <select name="preferences" class="pref1">
                 <option value="none" selected>Select</option>
                 <option value="sports">Sports</option>
                 <option value="gaming">Gaming</option>
@@ -84,7 +72,7 @@ Buy the selected gift and enjoy the Birthday! -->
                 <option value="toys">Kids&Toys</option>
                 <option value="cooking">Cooking</option>
             </select>
-            <select name="preferences" id="pref1">
+            <select name="preferences" class="pref1">
               <option value="none" selected>Select</option>
               <option value="sports">Sports</option>
               <option value="gaming">Gaming</option>
@@ -100,6 +88,22 @@ Buy the selected gift and enjoy the Birthday! -->
               <option value="toys">Kids&Toys</option>
               <option value="cooking">Cooking</option>
           </select>
+          <select name="preferences" class="pref1">
+            <option value="none" selected>Select</option>
+            <option value="sports">Sports</option>
+            <option value="gaming">Gaming</option>
+            <option value="clothing">Clothing</option>
+            <option value="decoration">Decoration</option>
+            <option value="gardening">Gardening</option>
+            <option value="gadgets">Gadgets</option>
+            <option value="books">Books</option>
+            <option value="movies">Movies</option>
+            <option value="art">Art</option>
+            <option value="beauty">Beauty Products</option>
+            <option value="travel">Travel</option>
+            <option value="toys">Kids&Toys</option>
+            <option value="cooking">Cooking</option>
+        </select>
           
 
           <input type="submit" value="Add" id="add">

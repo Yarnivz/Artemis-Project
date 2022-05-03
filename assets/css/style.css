@@ -404,7 +404,7 @@ button:hover{
 /*-- tour --*/
 .gender{
     width: 25vh;
-    margin-left: 50vh;
+    margin-left: 55vh;
    
 
 }
@@ -649,3 +649,6 @@ select:focus {
     margin-top: 40px;   
     cursor: pointer;
 }
+
+/*-- calendar --*/
+

@@ -1,8 +1,3 @@
-<!-- Instruction about our site -->
-<!-- Log In or Create an Account
-Check your friend's Birthday or the Event
-Scroll, choose, go to the shop's website
-Buy the selected gift and enjoy the Birthday! -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,39 +16,31 @@ Buy the selected gift and enjoy the Birthday! -->
                 <a href="index.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
                 <ul>
                     <li><a href="index.html">HOME</a></li>
-                    <li><a href="login.html">LOGIN</a></li>
-                    <li><a href="singup.html">SIGNUP</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="settings.html">SETTINGS</a></li>
+                    <li><a href="index.html">LOGOUT</a></li>
                 </ul>
 
             </div>
+                
+    <div class="settings">
+        <h4 class="">Add events</h4>
+        <div class="">
+            <div class="">
+                <div class=""> <input type="radio" class="bg-light form-control" placeholder="Lastname"> </div>
+                <label for="html" class="description">Birthday</label>
+            </div>
+            <div class="">
+                <div class="">  <input type="radio" class="bg-light form-control" placeholder="Email"> </div>
+                <label for="" class="description">Wedding</label>
+                <div class=""> <input type="radio" class="bg-light form-control" placeholder="Phone-number"> </div>
+                <label for="" class="description">Other</label>
+            </div>
+            <div class="row py-2">
+            </div>
+           
+              <input type="text" placeholder="For who is the event?" id="person" name="fname">
             
-          
-      
-      <div>
-
-          <img src="Assets/images/log2.png" alt="log2" id="add_event_image">
-         
-          <form action="/action_page.php">
-
-          <fieldset>
-            <legend id="name">This is a(n):</legend>
-              <input type="radio" class="check" name="type_event" value="event">
-              <label for="html" class="description">Event</label>
-              <input type="radio" class="check" name="type_event" value="wedding">
-              <label for=wedding" class="description">Wedding</label>
-              <input type="radio"   class="check" name="type_event" value="birthday">
-              <label for="birthday" class="description">Birthday</label>
-              <input type="radio"   class="check" name="type_event" value="other">
-              <label for="other" class="description">Other</label>
-
-            </fieldset>
-            <label for="fname">For Whom?</label>
-              <input type="text" id="person" name="fname" >
-
-              <label for="description">Description</label>
-              <input type="text" id="desc" name="desc" >
-
+              <input type="text" placeholder="Description" id="desc" name="desc" >
               <label for="preferences" > Select your preferences</label>
              
               <select name="preferences" class="pref1">
@@ -104,19 +91,34 @@ Buy the selected gift and enjoy the Birthday! -->
             <option value="toys">Kids&Toys</option>
             <option value="cooking">Cooking</option>
         </select>
+            <div class="addEvent">
+            
+              <button class="btn btn-primary mr-3">Add</button> 
           
+            </div>
 
-          <input type="submit" value="Add" id="add">
-        </form>
-          
-      </div>
+        </div>
+    </div>
+
           
         </nav>
+        
 
     </section>
 
-  <script src="Assets/js/add-event.js"></script>
-  <script src="Assets/js/selected-preference-add-event.js"></script>
+
+<script>
+
+    var navlinks = document.getElementById("navlinks");
+
+    function showMenu(){
+        navlinks.style.right= "0"
+    }
+    function hideMenu(){
+        navlinks.style.right="-200px";
+    }
+
+</script>
 
 </body>
 </html> 

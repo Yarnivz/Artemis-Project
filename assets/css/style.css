@@ -473,11 +473,11 @@ button:hover{
    
 
     padding: 3px 50px;
-    border: 1px solid #ddd;
     border-radius: 15px;
     margin: 10px auto;
     margin-left: 50vh;
     width: 600px;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
 }
 
 h4 {
@@ -566,7 +566,11 @@ select:focus {
     margin: 10px auto;
     margin-left: 50vh;
     width: 600px;
+    height: 600px;
+    box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+    border-radius: 15px;
 }
+
 .find-friends-header{
     background: none;
 
@@ -614,11 +618,25 @@ select:focus {
 } 
 
   /*-- add event --*/
-#add_event_image{
-    display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 15%;
+.settings{
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.pref1{
+
+    align-items: center;
+    text-align: center;
+    margin-left: 8%;
+    
+
+}
+.addEvent{
+
+    align-items: center;
+    padding: 0 2rem;
+    text-align: center;
 }
 .check{
     
@@ -638,10 +656,12 @@ select:focus {
 }
 #person{
     width: 250px;
+    text-align: center;
 }
 #desc{
-    width: 600px;
-    height: 100px;
+
+    width: 320px;
+    text-align: center;
 }
 
 #add{
@@ -650,5 +670,5 @@ select:focus {
     cursor: pointer;
 }
 
-/*-- calendar --*/
+/*-- Calendat --*/
 

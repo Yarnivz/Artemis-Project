@@ -1,0 +1,36 @@
+{
+    "name": "list of games",
+
+    "games":
+    [
+        {
+            "name": "Horizon Zero Dawn",
+            "publisher": "Playstation", 
+            "creator": "Guerilla Games",
+            "pegi": "16"
+        },
+
+        {
+            "name": "Red Dead Redemption 2",
+            "publisher": "Rockstar", 
+            "creator": "Rockstar",
+            "pegi": "18"
+        },
+
+        {
+            "name": "The Last Of Us 2",
+            "publisher": "Playstation", 
+            "creator": "Naughty Dog",
+            "pegi": "18"
+        },
+
+        {
+            "name": "God Of War",
+            "publisher": "Playstation", 
+            "creator": "Santa Monica Studio",
+            "pegi": "18"
+        }
+
+    ]
+
+}

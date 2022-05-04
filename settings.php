@@ -1,8 +1,4 @@
-<!-- Instruction about our site -->
-<!-- Log In or Create an Account
-Check your friend's Birthday or the Event
-Scroll, choose, go to the shop's website
-Buy the selected gift and enjoy the Birthday! -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,14 +27,6 @@ Buy the selected gift and enjoy the Birthday! -->
     <div class="settings">
         <h4 class="">Account settings</h4>
         <div class="">
-            <div class="">
-                <div class="">  <input type="text" class="bg-light form-control" placeholder="Firstname"> </div>
-                <div class=""> <input type="text" class="bg-light form-control" placeholder="Lastname"> </div>
-            </div>
-            <div class="">
-                <div class="">  <input type="text" class="bg-light form-control" placeholder="Email"> </div>
-                <div class=""> <input type="tel" class="bg-light form-control" placeholder="Phone-number"> </div>
-            </div>
             <div class="row py-2">
             </div>
             <div class=""> <button class="btn btn-primary mr-3">Save</button> 
@@ -48,7 +36,7 @@ Buy the selected gift and enjoy the Birthday! -->
             <div class="" id="deactivate">
                 <div class="tag"> <b>Deactivate your account</b>
                 </div>
-                <div class=""> <button class="btn danger">Deactivate</button> </div>
+                <button type="submit"> Log out </button>
             </div>
         </div>
     </div>

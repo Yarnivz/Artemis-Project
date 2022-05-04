@@ -3,7 +3,7 @@
     include "assets/database/connection.php";
 
     $conn = dbConnection();
-
+    session_start();
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $gender = $_POST["gender"];
@@ -49,3 +49,8 @@
 </h1>
 </body>
 </html>
+
+
+<?php
+    $conn -> close();
+?>

@@ -123,3 +123,5 @@ INSERT INTO `Preferences` (`Name`) VALUES ('beauty');
 INSERT INTO `Preferences` (`Name`) VALUES ('travel');
 INSERT INTO `Preferences` (`Name`) VALUES ('toys');
 INSERT INTO `Preferences` (`Name`) VALUES ('cooking');
+
+INSERT INTO `User_Preferences` (`UserID`, `PreferenceID`) VALUES ('11','1');

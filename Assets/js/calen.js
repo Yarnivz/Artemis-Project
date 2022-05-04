@@ -44,15 +44,19 @@ const renderCalendar = () => {
 
   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
-  document.querySelector(".date p").innerHTML = new Date().toDateString();
+  document.querySelector(".date p").innerHTML = new Date().getFullYear();
 
-  let days = "";
+  //Days Of Previous Month
 
-  for (let x = firstDayIndex; x > 0; x--) {
+  var days = "";
+
+  for (var x = firstDayIndex; x > 0; x--) {
     days += `<div class="prev-date">${prevLastDay - x + 1}</div>`;
   }
 
-  for (let i = 1; i <= lastDay; i++) {
+  //Days Of Previous Month
+
+  for (var i = 1; i <= lastDay; i++) {
     if (
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
@@ -63,7 +67,8 @@ const renderCalendar = () => {
     }
   }
 
-  for (let j = 1; j <= nextDays; j++) {
+  //
+  for (var j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
     monthDays.innerHTML = days;
   }

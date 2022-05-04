@@ -3,7 +3,7 @@
     include "assets/database/connection.php";
 
     $conn = dbConnection();
-
+    session_start();
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $gender = $_POST["gender"];
@@ -11,9 +11,18 @@
     $email = $_POST["email"];
     $password = $_POST["password"];
     
+
     $sqlInsert = "INSERT INTO `Users` (`firstName`, `lastName`, `gender`, `email`, `password`, `birthdate`) VALUES ('$firstname', '$lastname', '$gender', '$email', '$password', '$birthdate');";
 
+    $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = '$password';";
+
     $result = mysqli_query($conn, $sqlInsert);
+
+    $queryResult = mysqli_query($conn, $sqlQuery);
+
+    $returnedRow = $queryResult -> fetch_all(MYSQLI_ASSOC);
+    $creatingUser = $returnedRow[0];
+
 ?>
 
 <!DOCTYPE html>
@@ -33,9 +42,15 @@
         }
         else {
             echo "Account succesfully created";
+            $_SESSION["creatingUser"] = $creatingUser;
             header("Location: preference.html");
         }
     ?>
 </h1>
 </body>
 </html>
+
+
+<?php
+    $conn -> close();
+?>

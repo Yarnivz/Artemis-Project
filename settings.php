@@ -1,3 +1,14 @@
+<?php 
+    
+    include "assets/database/connetion.php";
+
+    $conn = dbconnection();
+    session_start();
+
+    $firstname = $_SESSION["loggedUser"][0]["firstName"]; 
+    $lastname = $_SESSION["loggedUser"][0]["lastName"]; 
+    $email = $_SESSION["loggedUser"][0]["email"]; 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,12 +40,23 @@
         <div class="">
             <div class="row py-2">
             </div>
+                <h3>
+                   <?php
+                        echo $firstname;
+                        echo "</br>";
+                        echo $lastname;
+                        echo "</br>";
+                        echo $email;
+
+                   ?>
+                </h3>
+            
             <div class=""> <button class="btn btn-primary mr-3">Save</button> 
                 <button class="btn border button">Cancel</button> 
             </div>
 
             <div class="" id="deactivate">
-                <div class="tag"> <b>Deactivate your account</b>
+                <div class="tag"> <b>Logout</b>
                 </div>
                 <button type="submit"> Log out </button>
             </div>

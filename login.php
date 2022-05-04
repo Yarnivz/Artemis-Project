@@ -2,7 +2,7 @@
 
     include "assets/database/connection.php";
     $conn = dbConnection();
-
+    session_start();
     $email = $_POST["email"];
     $password = $_POST["password"];
     $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = '$password';";
@@ -42,3 +42,7 @@
     </h1>
 </body>
 </html>
+
+<?php
+    $conn -> close();
+?>

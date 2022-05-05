@@ -1,5 +1,7 @@
 const date = new Date();
 
+// Render The days in the calendar
+
 const renderCalendar = () => {
   date.setDate(1);
 
@@ -67,21 +69,46 @@ const renderCalendar = () => {
     }
   }
 
-  //
+  //Days Of Next Month
   for (var j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
     monthDays.innerHTML = days;
   }
 };
 
+//Using to click previous button 
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   renderCalendar();
 });
 
+//Using to click next button
 document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
 });
 
+
+//To render the calendar after the function
 renderCalendar();
+
+
+
+
+
+
+// Adding button functionality
+
+
+
+
+
+
+
+
+
+
+
+
+
+

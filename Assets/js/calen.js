@@ -72,8 +72,8 @@ const renderCalendar = () => {
   //Days Of Next Month
   for (var j = 1; j <= nextDays; j++) {
     days += `<div class="next-date">${j}</div>`;
-    monthDays.innerHTML = days;
   }
+  monthDays.innerHTML = days;
 };
 
 //Using to click previous button 
@@ -87,7 +87,6 @@ document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
 });
-
 
 //To render the calendar after the function
 renderCalendar();
@@ -112,3 +111,8 @@ renderCalendar();
 
 
 
+=======
+renderCalendar();
+
+
+>>>>>>> 260c0a12836a893c6cfa3abba2940d6ac502f730

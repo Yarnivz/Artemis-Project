@@ -100,19 +100,3 @@ renderCalendar();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-=======
-renderCalendar();
-
-
->>>>>>> 260c0a12836a893c6cfa3abba2940d6ac502f730

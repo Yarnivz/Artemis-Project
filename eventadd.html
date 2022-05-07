@@ -11,30 +11,18 @@
     <section class="header"> 
         <nav>
             
-            <div class="nav-links" id="navlinks"> 
-                <img src="assets/images/log2.png" class="logo" alt="index.html">
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="login.html">LOGIN</a></li>
-                    <li><a href="singup.html">SIGNUP</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
-                    
-                </ul>
-
-            </div>
-
-            <div class="signup">
-               
+            <div class="event1">
+                
+                <form method="POST" action="signup.php"> 
                   
                    
                     
                  
-                  <label for="chk" aria-hidden="true"> Add event </label>
-                  <input type="text"  name="name" placeholder="Name" required>
-                  <input type="text" name="evnt-name" placeholder="Event-name"  required>
+                <label for="chk" aria-hidden="true"> Add event </label>
+                <input type="text"  name="name" placeholder="Name" required>
                   
-	
                  </select>
+                  <input type="time" name="time" placeholder="Time" required>
                   <input type="date" name="date" placeholder="Date" required>
                   <button type="submit"> Add </button>
                   

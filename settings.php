@@ -1,13 +1,16 @@
 <?php 
     
-    include "assets/database/connetion.php";
+    include "assets/database/connection.php";
 
-    $conn = dbconnection();
+    $conn = dbConnection();
     session_start();
 
-    $firstname = $_SESSION["loggedUser"][0]["firstName"]; 
-    $lastname = $_SESSION["loggedUser"][0]["lastName"]; 
-    $email = $_SESSION["loggedUser"][0]["email"]; 
+    if ($_SESSION["isLoggedIn"] != True) {
+        header("Location: login.html");
+    }
+    $firstname = $_SESSION["loggedUser"]["FirstName"]; 
+    $lastname = $_SESSION["loggedUser"]["LastName"]; 
+    $email = $_SESSION["loggedUser"]["Email"];
 ?>
 
 <!DOCTYPE html>
@@ -43,22 +46,28 @@
                 <h3>
                    <?php
                         echo $firstname;
-                        echo "</br>";
-                        echo $lastname;
-                        echo "</br>";
-                        echo $email;
-
-                   ?>
+                    ?>
                 </h3>
-            
-            <div class=""> <button class="btn btn-primary mr-3">Save</button> 
-                <button class="btn border button">Cancel</button> 
-            </div>
+                <br>
+                <h3>
+                    <?php
+                        echo $lastname;
+                    ?>
+                </h3>    
+                <br>
+                <h3>
+                    <?php
+                        echo $email;
+                    ?>
+                </h3>
+
 
             <div class="" id="deactivate">
-                <div class="tag"> <b>Logout</b>
+                <div class="tag">
                 </div>
-                <button type="submit"> Log out </button>
+                <form method="POST" action = "logout.php">
+                    <button type="submit"> Log out </button>
+                </form>
             </div>
         </div>
     </div>

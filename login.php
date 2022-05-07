@@ -8,6 +8,7 @@
     $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = '$password';";
     
     $result = mysqli_query($conn,$sqlQuery);
+    var_dump($result);
     $returnedRow = $result -> fetch_all(MYSQLI_ASSOC);
     $loggedUser = $returnedRow[0];
 
@@ -24,18 +25,19 @@
 <body>
     <h1>
         <?php
-            if ($result == False) {
+            if ($result == False OR $result["num_rows"] == 0) {
                 echo "Login Failed, please check if your e-mail or password is correct!";
                 echo "\r";
                 var_dump($sqlQuery);
                 echo "\r";
                 var_dump($result);
-                header("Location:login.html");
+                header("Location: login.html");
             }
             else {
                 echo "Login Succesful!";
+                $_SESSION["isLoggedIn"] = True;
                 $_SESSION["loggedUser"] = $loggedUser;
-                header("Location:calendar.html");
+                header("Location: calen.html");
             }
         
         ?>

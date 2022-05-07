@@ -2,12 +2,12 @@
 
     include "Assets/database/connection.php";
 
-    $connection = dbConnection(); 
+    $conn = dbConnection(); 
 
-    $friends = $_GET["friends"];
+    $friends = $_POST["friends"];
     $sqlQuery = "SELECT Friends FROM Users";
 
-    $result = mysqli_query($connection, $sqlQuery);
+    $result = mysqli_query($conn, $sqlQuery);
     
     
 ?>

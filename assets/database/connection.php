@@ -9,7 +9,7 @@
         $conn = mysqli_connect($hostname, $username, $password, $databasename, $port);
 
         if ($conn == false) {
-            echo "Credentials are not correct";
+            echo "Can't connect to the database!";
             die();
         }
 

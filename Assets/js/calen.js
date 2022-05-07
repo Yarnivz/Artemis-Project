@@ -29,6 +29,8 @@ const renderCalendar = () => {
 
   const nextDays = 7 - lastDayIndex - 1;
 
+
+  //Months represented in fixed lenght
   const months = [
     "January",
     "February",
@@ -91,7 +93,47 @@ document.querySelector(".next").addEventListener("click", () => {
 renderCalendar();
 
 
-// Adding button functionality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Head Start 
+
+window.Calendar = Calendar;
+
+// Usage of the elements of HTML 
+function theElements(idTags, classNames, innerTextUsage)
+{
+  var element = document.createElement(idTags);
+  
+  if(classNames)
+  {
+    element.classNames = classNames;
+  }
+  else if(innerTextUsage)
+  {
+    element.innerTextUsage = element.textContent = innerTextUsage;
+
+  }
+
+  return element;
+}
+
+var eventName = document.myForm.eventName.value
 
 
 

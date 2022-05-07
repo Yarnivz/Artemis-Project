@@ -1,44 +1,45 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BDAY Calendar</title>
     <link rel="stylesheet" href="Assets/css/calen.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   </head>
 
   <body>
-    
+
   <!-- Tools for the add event -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    
   
   <!-- Header -->
   <section class="header"> 
       <nav>
           <div class="nav-links" id="navlinks"> 
+          
               <a href="index.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
+
               <ul>
                   <li><a href="index.html">HOME</a></li>
                   <li><a href="settings.php">SETTINGS</a></li>
                   <li><a href="login.html">LOGOUT</a></li>
               </ul>
+
           </div>
       </nav>
   </section>
   
   <div class="container">
+
     <div class="calendar">
-        
+      
+      
       <!-- Usage Month -->
 
       <div class="month">
@@ -50,6 +51,8 @@
         <i class="fas fa-angle-right next"></i>
       </div>
       
+
+
       <!-- Usage Weekdays -->
 
       <div class="weekdays">
@@ -62,13 +65,22 @@
         <div>Sat</div>
       </div>
     
+
+
       <!-- Usage Days -->
+      
       <div class="days"></div>
-    
+  
+      
+
     </div>
+  
   </div>
 
+
+  <!-- Usage JS Function-->
   <script src="Assets/js/calen.js"></script>
+
 
   </body>
 

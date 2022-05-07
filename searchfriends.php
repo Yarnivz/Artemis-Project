@@ -11,12 +11,11 @@
     
     $result =  mysqli_query($conn, $sqlQuery);
 
-    while($row == $result -> fetch_all(MYSQLI_ASSOC)){
+    while($row === $result -> fetch_all(MYSQLI_ASSOC)){
         
     }
     
     
-    // echo "<div id='link' onClick='addText(\"".$row -> username."\");'>" . $row -> username . "</div>";  
     
     // $connection = new mysqli('localhost', 'root', 'password', 'DB_NAME');
     
@@ -25,5 +24,6 @@
     
     // $result= $mysqli -> query($query);
     
+    // echo "<div id='link' onClick='addText(\"".$row -> username."\");'>" . $row -> username . "</div>";  
         
 ?>

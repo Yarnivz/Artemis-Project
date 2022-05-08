@@ -38,35 +38,63 @@
 
             </div>
                 
-    <div class="settings">
-        <h4 class="">Account settings</h4>
+            <div class="settings">
+        <h4 class="des">Account settings</h4>
         <div class="">
             <div class="row py-2">
             </div>
-                <h3>
-                   <?php
-                        echo $firstname;
-                    ?>
-                </h3>
-                <br>
-                <h3>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+
+                <div class="S-details">
+
+                    <h3>
                     <?php
-                        echo $lastname;
-                    ?>
-                </h3>    
-                <br>
-                <h3>
+                            echo $firstname;
+                        ?>
+                    </h3>
+                        <br>
+                        <h3>
                     <?php
-                        echo $email;
-                    ?>
-                </h3>
+                            echo $firstname;
+                        ?>
+                    </h3>
+                        <br>
+                        <h3>
+                    <?php
+                            echo $firstname;
+                        ?>
+                    </h3>
+
+                </div>
 
 
             <div class="" id="deactivate">
                 <div class="tag">
                 </div>
+
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+                </br>
+              
+                
+
+
+
                 <form method="POST" action = "logout.php">
-                    <button type="submit"> Log out </button>
+                    <button type="submit" class="set-out"> Log out </button>
                 </form>
             </div>
         </div>
@@ -78,6 +106,7 @@
 
     </section>
 
+                
 
 <script>
 

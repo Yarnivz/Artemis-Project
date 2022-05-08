@@ -93,5 +93,8 @@ renderCalendar();
 
 // Adding button functionality
 
-
+$('.datepicker').datepicker()
+    .on(picker_event, function(e) {
+        // `e` here contains the extra attributes
+    });
 

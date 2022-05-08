@@ -19,8 +19,7 @@
   <body>
     
     <!-- Tools for the add event -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+   
 
 
   <section class="header"> 
@@ -62,9 +61,6 @@
       <div class="days"></div>
     </div>
     <div>
-      <a href="eventadd.html" class="hero-btn">
-        add event 
-    </a>
     </div>
   </div>
 
@@ -75,7 +71,7 @@
         
         <div class="form-popup" id="myForm">
           <form action="/action_page.php" class="form-container">
-            <label for="chk" aria-hidden="true"> Add event </label>
+            <h3 class="tit"> Add event </h3>
             <input type="text"  name="firstname" placeholder="Firstname" required>
             <input type="text"  name="eventname" placeholder="Eventname" required>
               
@@ -137,7 +133,7 @@
         </select>
       </br>
 
-              <button type="submit"> Add </button>
+              <button class="hero-btn" type="submit"> Add </button>
               
           </form>
         </div>
@@ -155,6 +151,9 @@
     </div>
 
    </section>
+
+   <script src="Assets/js/jquery.min.js"></script>
+   <script src="Assets/js/moment.min.js"></script>
     <script src="Assets/js/calen.js"></script>
   </body>
 </html>

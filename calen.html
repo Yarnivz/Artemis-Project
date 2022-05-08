@@ -17,7 +17,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     
-  
+  <div id="calendar"></div>
+
   <!-- Header -->
   <section class="header"> 
       <nav>
@@ -85,53 +86,61 @@
     <!-- Creation of the form -->
 
     <div id="formDiv">
-      <Legend>Add Event</Legend>
+      <fieldset>
 
-      <form name="calendarForm" onsubmit="myFunction()">
-        <table>
-          
-
-          <tr>
-            <td>Name:</td>
-            <td><input type="text" name="eventName" id="eventName" required></td>
-          </tr>
-
-          <tr>
-            <td>Type:</td>
+        <Legend>
+          <h1>
+            Add Event
+          </h1>
+        </Legend>
+  
+        <form name="calendarForm" onsubmit="myFunction()">
+          <table>
             
-            <td style="display: flex;">
+            <tr>
+              <td>Name:</td>
+              <td><input type="text" name="eventName" id="eventName" required></td>
+            </tr>
+  
+            <tr>
+              <td>Type:</td>
               
-              <select name="selectMenu" id="eventType" name="eventType" onchange="displaysCol()" required>
-                <option value="" > -- Select an Event -- </option>
-                <option value="Event"> Event </option>
-                <option value="Leisure"> Free Times </option>
-                <option value="Family Time"> Family Time </option>
-                <option value="Birthday"> Birthday </option>
-                <option value="Birthday"> Wedding </option>
-              </select>
+              <td style="display: flex;">
+                
+                <select name="selectMenu" id="eventType" name="eventType" onchange="displaysCol()" required>
+                  <option value="" > -- Select an Event -- </option>
+                  <option value="Event"> Event </option>
+                  <option value="Free Times"> Free Times </option>
+                  <option value="Family Time"> Family Time </option>
+                  <option value="Birthday"> Birthday </option>
+                  <option value="Birthday"> Wedding </option>
+                </select>
+  
+                <div id="eventColor"></div>
+  
+              </td>
+            </tr>
+  
+  
+            <!-- Date Selection -->
+            <tr>
+              <td>Date:</td>
+              <td><input type="date" name="eventDate" id="eventDate" required></td>
+            </tr>
+  
+  
+            <!-- Usage Button -->
+            <tr>
+              <td><input type="submit" id="addEventBTN" value="Add Event"></td>
+              <td><button id="closeBTN" onclick="closeForm()" form="noForm">Close Window</button></td>
+            </tr>
+  
+  
+          </table>
+        </form>
 
-              <div id="eventColor"></div>
+      </fieldset>
 
-            </td>
-          </tr>
-
-
-          <!-- Date Selection -->
-          <tr>
-            <td>Date:</td>
-            <td><input type="date" name="eventDate" id="eventDate" required></td>
-          </tr>
-
-
-          <!-- Usage Button -->
-          <tr>
-            <td><input type="submit" id="addEventBTN" value="Add Event"></td>
-            <td><button id="closeBTN" onclick="closeForm()" form="noForm">Close Window</button></td>
-          </tr>
-
-
-        </table>
-      </form>
     </div>
 
     

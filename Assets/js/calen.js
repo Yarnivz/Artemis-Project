@@ -46,6 +46,8 @@ const renderCalendar = () => {
     "December",
   ];
 
+  // Header of the month
+
   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
   document.querySelector(".date p").innerHTML = new Date().getFullYear();
 
@@ -77,7 +79,7 @@ const renderCalendar = () => {
   monthDays.innerHTML = days;
 };
 
-//Using to click previous button 
+//Using to click previous button
 document.querySelector(".prev").addEventListener("click", () => {
   date.setMonth(date.getMonth() - 1);
   renderCalendar();
@@ -97,43 +99,146 @@ renderCalendar();
 
 
 
+window.document.onload = myFunction();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Head Start 
-
-window.Calendar = Calendar;
-
-// Usage of the elements of HTML 
-function theElements(idTags, classNames, innerTextUsage)
+function closeForm()
 {
-  var element = document.createElement(idTags);
-  
-  if(classNames)
-  {
-    element.classNames = classNames;
-  }
-  else if(innerTextUsage)
-  {
-    element.innerTextUsage = element.textContent = innerTextUsage;
-
-  }
-
-  return element;
+  var x = document.getElementById("formDiv");
+  var y = document.getElementsByClassName("addBTN")[0];
+  x.style.display = "none";
+  y.style.transform = "rotate(90deg)";
 }
 
-var eventName = document.myForm.eventName.value
+function toggleForm()
+{
+  var x = document.getElementById("formDiv");
+  var y = document.getElementsByClassName("addBTN")[0];
+  
+  if (x.style.display === "none")
+  {
+    x.style.display = "block";
+    y.style.display = "rotate(45deg)";
+  }
+  else
+  {
+    x.style.display = "block";
+    y.style.display = "rotate(90deg)";
+  }
+}
+
+function myFunction(){
+  
+  
+  //Head Start
+
+  window.Calendar = Calendar;
+
+  // Usage of the elements of HTML
+  function theElements(idTags, classNames, innerTextUsage)
+  {
+    var element = document.createElement(idTags);
+
+    if(classNames)
+    {
+      element.classNames = classNames;
+    }
+    else if(innerTextUsage)
+    {
+      element.innerTextUsage = element.textContent = innerTextUsage;
+
+    }
+
+    return element;
+  }
+
+  var eventName = document.calendarForm.eventName.value;
+  var eventType = document.calendarForm.eventType.value;
+  var eventColor = "";
+  var eventDate = document.calendarForm.eventDate.value
 
 
+  //Different Colors of different event types
 
+  switch(eventType)
+  {
+
+    case "Event":
+      eventColor = "orange";
+    break;
+
+    case "Free Times":
+      eventColor = "pink";
+    break;
+
+    case "Family Time":
+      eventColor = "green";
+    break;
+
+    case "Birthday":
+      eventColor = "red"
+    break;
+
+    default:
+      eventColor = "blue";
+    break;
+
+  }
+
+  //Storage data calendar
+  var data = JSON.parse(localStorage.getItem("data"))
+
+  if(data === null)
+  {
+    data = [];
+  }
+
+  else if(eventName != "" && eventType != "" && eventColor != "" && eventDate != "")
+  {
+    data.push(
+      {
+        eventName: eventName,
+        calendar: eventType,
+        color: eventColor,
+        date: eventDate
+      });
+  }
+
+  //To check if it's stored into the storage/data !
+
+  for (var a of data)
+  {
+    console.log(a)
+  }
+  localStorage.setItem("data", JSON.stringify(data));
+
+
+  //Deleting The Event
+
+  function delEvent(events)
+  {
+    var a = data.indexOf(events);
+    var b = confirm("Are you sure to remove this event ?");
+
+    if(b)
+    {
+      var c = data.splice(a, 1);
+    }
+
+    localStorage.setItem("data", JSON.stringify(data));
+
+  // To check if it's deleted from the storage/data !
+
+    for(var a of data)
+    {
+      console.log(a);
+    }
+
+    var calendar = new Calendar("#calendar", data);
+
+    document.calendarForm.eventName.value = "";
+    document.calendarForm.eventType.value = "";
+    document.calendarForm.eventDate.value = "";
+
+    toggleForm();
+  }
+}

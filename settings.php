@@ -56,22 +56,34 @@
                 <div class="S-details">
 
                     <h3>
-                    <?php
+                        First Name
+                    </h3>
+                    <br>
+                    <h4>
+                        <?php
                             echo $firstname;
                         ?>
+                    </h4>
+                    <br>
+                    <h3>
+                        Last Name
                     </h3>
-                        <br>
-                        <h3>
-                    <?php
-                            echo $firstname;
+                    <br>
+                    <h4>
+                        <?php
+                            echo $lastname;
+                        ?>                            
+                    </h4>
+                    <br>
+                    <h3>
+                        E-mail
+                    </h3>
+                    <br>
+                    <h4>
+                        <?php
+                            echo $email;
                         ?>
-                    </h3>
-                        <br>
-                        <h3>
-                    <?php
-                            echo $firstname;
-                        ?>
-                    </h3>
+                    </h4>
 
                 </div>
 

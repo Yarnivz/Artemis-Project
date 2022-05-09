@@ -33,7 +33,7 @@
                 echo "Login Succesful!";
                 $_SESSION["isLoggedIn"] = True;
                 $_SESSION["loggedUser"] = $loggedUser;
-                header("Location: calen.html");
+                header("Location: calendar.html");
             }
         
         ?>

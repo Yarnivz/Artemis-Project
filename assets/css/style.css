@@ -672,7 +672,8 @@ select:focus {
     cursor: pointer;
 }
 .S-details{
-
+    margin-top: 50px;
+    
     
 }
 .set-out{

@@ -1,21 +1,4 @@
-<?php
 
-    include "Assets/database/connection.php";
-
-    $conn = dbConnection();
-    session_start();
-    
-    $fullname = $_POST["fullname"];
-   
-    $sqlQuery = "SELECT `fullname` FROM Users WHERE `fullname` LIKE '%$fullname%';";
-    
-    $result =  mysqli_query($conn, $sqlQuery);
-
-    $num_rows = mysqli_num_rows($result);
-
-    $users = $result -> fetch_all(MYSQLI_ASSOC);
-        
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,18 +28,16 @@
             <div class="find-friends-container">
                 <div class="find-friends-header">
                     <div class="S-details">
-                        <?php
-                            if ($num_rows < 1) {
-                                echo "No users found";
-                            }
-                            else {
-                                foreach($users as $user) {
-                                    echo "<button class='addfriend' type='submit'> + </button>";
-                                    echo "<h4>" . $user['fullname'] . "</h4>";
-                                    echo "<br>";
-                                }
-                            }
-                        ?>
+                        <h4>
+                            Test User
+                        </h4>
+                        <br>
+                        <h4>
+                            Test User
+                        </h4>
+                        <h4>
+                            Test User
+                        </h4>
                     </div>
                 </div>
             </div>

@@ -47,11 +47,6 @@
                 </br>
                 </br>
                 </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
 
                 <div class="S-details">
 
@@ -95,11 +90,7 @@
                 </br>
                 </br>
                 </br>
-                </br>
-                </br>
-                </br>
-                </br>
-                </br>
+
               
                 
 

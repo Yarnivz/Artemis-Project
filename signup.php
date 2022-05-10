@@ -10,9 +10,9 @@
     $birthdate = $_POST["birthdate"];
     $email = $_POST["email"];
     $password = $_POST["password"];
-    
+    $fullname = $firstname . " " . $lastname;
 
-    $sqlInsert = "INSERT INTO `Users` (`firstName`, `lastName`, `gender`, `email`, `password`, `birthdate`) VALUES ('$firstname', '$lastname', '$gender', '$email', '$password', '$birthdate');";
+    $sqlInsert = "INSERT INTO `Users` (`firstName`, `lastName`,`fullname`, `gender`, `email`, `password`, `birthdate`) VALUES ('$firstname', '$lastname', '$fullname', '$gender', '$email', '$password', '$birthdate');";
 
     $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = '$password';";
 

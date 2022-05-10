@@ -3,19 +3,16 @@ DROP DATABASE IF EXISTS BDAY;
 CREATE DATABASE BDAY;
 USE BDAY;
 
--- User
-
 CREATE TABLE Users (
 `UserId` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `FirstName` VARCHAR(50) NOT NULL,
 `LastName` VARCHAR(50) NOT NULL,
+`FullName` VARCHAR(100) NOT NULL,
 `Gender` VARCHAR(6) NOT NULL,
 `Email` VARCHAR(80) NOT NULL UNIQUE,
 `Password` VARCHAR(50) NOT NULL,
 `Birthdate` DATE NOT NULL
 );
-
--- Shop
 
 CREATE TABLE Shops (
 `ShopID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -26,8 +23,6 @@ CREATE TABLE Shops (
 `Email` VARCHAR(50)
 );
 
--- Friends
-
 CREATE TABLE Friends (
 `UserID` INT NOT NULL,
 `FriendID` INT NOT NULL,
@@ -36,14 +31,10 @@ FOREIGN KEY (UserID) REFERENCES Users(UserID),
 FOREIGN KEY (FriendID) REFERENCES Users(UserID)
 );
 
--- Preference
-
 CREATE TABLE Preferences (
 `PreferenceID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `Name` VARCHAR(50) NOT NULL
 );
-
--- User Preference
 
 CREATE TABLE User_Preferences (
 `UserID` INT NOT NULL,
@@ -53,15 +44,10 @@ FOREIGN KEY (UserID) REFERENCES Users(UserID),
 FOREIGN KEY (PreferenceID) REFERENCES Preferences(PreferenceID)
 );
 
-
--- Event Category
 CREATE TABLE Event_Category (
 `CategoryID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `Name` VARCHAR(50) NOT NULL
 );
-
-
--- Guests
 
 CREATE TABLE Guests (
 `UserID` INT NOT NULL,
@@ -76,8 +62,6 @@ FOREIGN KEY (Preference1) REFERENCES Preferences(PreferenceID),
 FOREIGN KEY (Preference2) REFERENCES Preferences(PreferenceID)
 );
 
--- Events
-
 CREATE TABLE Events (
 `EventID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `Name` VARCHAR(200) NOT NULL,
@@ -91,8 +75,6 @@ FOREIGN KEY (UserID, FriendID) REFERENCES Friends(UserID, FriendID),
 FOREIGN KEY (UserID, GuestID) REFERENCES Guests(UserID, GuestID)
 );
 
--- Gifts
-
 CREATE TABLE Gifts (
 `GiftID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `ProductName` VARCHAR(50) NOT NULL,
@@ -102,8 +84,6 @@ CREATE TABLE Gifts (
 `EventCategory` INT,
 FOREIGN KEY (EventCategory) REFERENCES Event_Category(CategoryID)
 );
-
--- Favorite
 
 CREATE TABLE Favorite (
 `UserID` INT NOT NULL,
@@ -115,8 +95,6 @@ FOREIGN KEY (GiftID) REFERENCES Gifts(GiftID),
 FOREIGN KEY (EventID) REFERENCES Events(EventID)
 );
 
--- Gift Preferences
-
 CREATE TABLE Gift_Preferences (
 `GiftID` INT NOT NULL,
 `PreferenceID` INT NOT NULL,
@@ -124,8 +102,6 @@ PRIMARY KEY (GiftID, PreferenceID),
 FOREIGN KEY (GiftID) REFERENCES Gifts(GiftID),
 FOREIGN KEY (PreferenceID) REFERENCES Preferences(PreferenceID)
 );
-
--- Shop Preferences
 
 CREATE TABLE Shop_Preferences (
 `ShopID` INT NOT NULL,
@@ -149,4 +125,4 @@ INSERT INTO `Preferences` (`Name`) VALUES ('travel');
 INSERT INTO `Preferences` (`Name`) VALUES ('toys');
 INSERT INTO `Preferences` (`Name`) VALUES ('cooking');
 
-INSERT INTO `User_Preferences` (`UserID`, `PreferenceID`) VALUES ('11','1');
+SELECT * FROM `Users` WHERE `Email` = 'yarnitopper@gmail.com' AND `Password` = 'password123';

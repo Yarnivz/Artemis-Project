@@ -38,7 +38,7 @@ function displayEventSelection() {
       eventColor = "";
       break;
   
-    case "Event":
+    case "Wedding":
       eventColor = "rgba(156, 202, 235, 1)";
       break;
     
@@ -224,9 +224,6 @@ function theFunction() {
       clone.add(1, "days");
     }
   };
-
-
-
 
 
   // Function for the day of the week

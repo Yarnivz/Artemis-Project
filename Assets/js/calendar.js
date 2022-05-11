@@ -71,6 +71,7 @@ function theFunction() {
 
   //Calling out the day of today
   var today = moment();
+  
   function Calendar(selector, events) {
     this.el = document.querySelector(selector);
     this.events = events;
@@ -500,7 +501,7 @@ function theFunction() {
 
 
 
-  //Calling The NEXT MONTH Button Function
+  //Calling The Next Month Function
   Calendar.prototype.nextMonth = function() {
     this.current.add(1, "months");
     this.next = true;
@@ -527,7 +528,7 @@ function theFunction() {
 
 
 
-  //Calling The Previous Month Functon
+  //Calling The Previous Month Function
   Calendar.prototype.prevMonth = function() {
     this.current.subtract(1, "months");
     this.next = false;
@@ -552,7 +553,7 @@ function theFunction() {
 
 
 
-  // headstart
+  // Head Start
   window.Calendar = Calendar;
 
   // calling out the classes, id's and innerText

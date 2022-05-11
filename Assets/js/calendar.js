@@ -33,20 +33,36 @@ function displayEventSelection() {
   var eventType = document.myForm.eventType.value;
   var eventColor = "";
   switch (eventType) {
+    
+    case "Select Event":
+      eventColor = "";
+      break;
+  
     case "Event":
       eventColor = "rgba(156, 202, 235, 1)";
       break;
+    
     case "Free Times":
       eventColor = "rgba(247, 167, 0, 1)";
       break;
+    
     case "Family Time":
       eventColor = "rgba(249, 233, 0, 1)";
       break;
+    
+    case "Birthday":
+      eventColor = "rgba(255, 10, 120, 1)";
+      break;
+
     default:
-      eventColor = "rgba(153, 198, 109, 1)";
+    eventColor = "rgba(153, 198, 109, 1)";
+      break;
   }
   $("#eventColor").css("background", eventColor);
 }
+
+
+
 
 
 // The Calendar Function
@@ -103,15 +119,20 @@ function theFunction() {
       this.header = createElement("div", "header");
       this.header.className = "header";
       this.title = createElement("h1");
+
+      //Right Cursor
       var right = createElement("div", "right");
       right.addEventListener("click", function() {
         self.nextMonth();
       });
 
+
+      //Left Cursor
       var left = createElement("div", "left");
       left.addEventListener("click", function() {
         self.prevMonth();
       });
+
 
       //Append the Elements
       this.header.appendChild(this.title);
@@ -147,7 +168,9 @@ function theFunction() {
           self.month.className = "month in " + (self.next ? "next" : "prev");
         }, 16);
       });
-    } else {
+    }
+    else 
+    {
       this.month = createElement("div", "month");
       this.el.appendChild(this.month);
       this.backFill();
@@ -155,6 +178,7 @@ function theFunction() {
       this.fowardFill();
       this.month.className = "month new";
     }
+
   };
 
   // Day Of the Week display into the days
@@ -172,7 +196,7 @@ function theFunction() {
     }
   };
 
-
+  //The Functionality of the month 
   Calendar.prototype.fowardFill = function() {
     var clone = this.current
       .clone()
@@ -200,6 +224,10 @@ function theFunction() {
     }
   };
 
+
+
+
+
   // Function for the day of the week
   Calendar.prototype.getWeek = function(day) {
     if (!this.week || day.day() === 0) {
@@ -207,6 +235,9 @@ function theFunction() {
       this.month.appendChild(this.week);
     }
   };
+
+
+
 
   // Function for the days
   Calendar.prototype.drawDay = function(day) {
@@ -221,6 +252,9 @@ function theFunction() {
         self.openDay(this);
       });
     }
+
+
+
 
     //Day Name
     var name = createElement("div", "day-name", day.format("ddd"));
@@ -239,6 +273,8 @@ function theFunction() {
   };
 
 
+
+
   Calendar.prototype.drawEvents = function(day, element) {
     if (day.month() === this.current.month()) {
       var todaysEvents = this.events.reduce(function(memo, ev) {
@@ -247,6 +283,9 @@ function theFunction() {
         }
         return memo;
       }, []);
+
+
+
 
       todaysEvents.forEach(function(ev) {
         var evSpan = createElement("span", ev.color);
@@ -304,7 +343,9 @@ function theFunction() {
         currentOpened.className = "details out";
       }
 
+
       //Create the Details Container
+      //Shows what detail is added to the calendar
       details = createElement("div", "details in");
 
       var group1 = createElement("div", "detailsHeader");
@@ -322,6 +363,8 @@ function theFunction() {
       );
     // }
 
+
+
     var todaysEvents = this.events.reduce(function(memo, ev) {
       if (ev.date.isSame(day, "day")) {
         memo.push(ev);
@@ -334,6 +377,14 @@ function theFunction() {
 
     // arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + 27 + "px";
   };
+
+
+
+
+
+
+
+
 
   // Calendar Render
 
@@ -395,6 +446,13 @@ function theFunction() {
       ele.appendChild(wrapper);
     }
   };
+
+
+
+
+
+
+
 
 
   // Function of Legend
@@ -518,7 +576,7 @@ function theFunction() {
   var eventDate = document.myForm.eventDate.value;
 
   switch (eventType) {
-    
+
     case "Event":
       eventColor = "blue";
       break;
@@ -531,14 +589,19 @@ function theFunction() {
       eventColor = "yellow";
       break;
 
+    case "Birthday":
+        eventColor = "red";
+
     default:
       eventColor = "green";
       break;
   
   }
   
+
   // Storing each category into the local data
-  
+  //UPDATE --> Connect it with SQL/ JSON 
+
   var data = JSON.parse(localStorage.getItem("data"));
 
   if (data == null) data = [];
@@ -576,6 +639,9 @@ function theFunction() {
                         	console.log(z);*/
 localStorage.setItem("data", JSON.stringify(data));
       
+
+  //Confirmation of the deleted details
+
   for (var a of data) {
     console.log(a);
   }

@@ -1,87 +1,159 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Assets/css/navigation-style.css" type="text/css">
-    <link rel="stylesheet" href="Assets/css/calen.css" type="text/css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BDAY Calendar</title>
+    <link rel="stylesheet" href="Assets/css/calen.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  
+
   <body>
     
-    <section class="head"> 
-      <nav>      
+    <!-- Tools for the add event -->
+   
+
+
+  <section class="header"> 
+      <nav>
+          
           <div class="nav-links" id="navlinks"> 
               <a href="index.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
               <ul>
                   <li><a href="index.html">HOME</a></li>
                   <li><a href="settings.php">SETTINGS</a></li>
                   <li><a href="login.html">LOGOUT</a></li>
+                
               </ul>
+
           </div>
+        
       </nav>
-    </section>
+  </section>
+  
+  <div class="container">
+    <div class="calendar">
+      <div class="month">
+        <i class="fas fa-angle-left prev"></i>
+        <div class="date">
+          <h1></h1>
+          <p></p>
+        </div>
+        <i class="fas fa-angle-right next"></i>
+      </div>
+      <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+      <div class="days"></div>
+    </div>
+    <div>
+    </div>
+  </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <div class="event1">
+     
+        
+        <button class="open-button" onclick="openForm()">EVENT +</button>
+        
+        <div class="form-popup" id="myForm">
+          <form action="/action_page.php" class="form-container">
+            <h3 class="tit"> Add event </h3>
+            <input type="text"  name="firstname" placeholder="Firstname" required>
+            <input type="text"  name="eventname" placeholder="Eventname" required>
+              
+             </select>
+              <input type="time" name="time" placeholder="Time" required>
+              <input type="date" name="date" placeholder="Date" required>
 
-    <div id="calendar"></div>
+            </br>
+              
+              <select name="preferences" class="pref1">
+                <option value="none" selected>Select</option>
+                <option value="sports">Sports</option>
+                <option value="gaming">Gaming</option>
+                <option value="clothing">Clothing</option>
+                <option value="decoration">Decoration</option>
+                <option value="gardening">Gardening</option>
+                <option value="gadgets">Gadgets</option>
+                <option value="books">Books</option>
+                <option value="movies">Movies</option>
+                <option value="art">Art</option>
+                <option value="beauty">Beauty Products</option>
+                <option value="travel">Travel</option>
+                <option value="toys">Kids&Toys</option>
+                <option value="cooking">Cooking</option>
+            </select>
+          </br>
+            <select name="preferences" class="pref1">
+              <option value="none" selected>Select</option>
+              <option value="sports">Sports</option>
+              <option value="gaming">Gaming</option>
+              <option value="clothing">Clothing</option>
+              <option value="decoration">Decoration</option>
+              <option value="gardening">Gardening</option>
+              <option value="gadgets">Gadgets</option>
+              <option value="books">Books</option>
+              <option value="movies">Movies</option>
+              <option value="art">Art</option>
+              <option value="beauty">Beauty Products</option>
+              <option value="travel">Travel</option>
+              <option value="toys">Kids&Toys</option>
+              <option value="cooking">Cooking</option>
+          </select>
+        </br>
+          <select name="preferences" class="pref1">
+            <option value="none" selected>Select</option>
+            <option value="sports">Sports</option>
+            <option value="gaming">Gaming</option>
+            <option value="clothing">Clothing</option>
+            <option value="decoration">Decoration</option>
+            <option value="gardening">Gardening</option>
+            <option value="gadgets">Gadgets</option>
+            <option value="books">Books</option>
+            <option value="movies">Movies</option>
+            <option value="art">Art</option>
+            <option value="beauty">Beauty Products</option>
+            <option value="travel">Travel</option>
+            <option value="toys">Kids&Toys</option>
+            <option value="cooking">Cooking</option>
+        </select>
+      </br>
 
-    <!-- The Whole Form dive when you press the + button -->
-    <div id='formDiv'>
-      <fieldset style='padding:0 20px 20px 20px'>
+              <button class="hero-btn" type="submit"> Add </button>
+              
+          </form>
+        </div>
         
-        <legend>
-          <h2> Add An Event </h2>
-        </legend>
+        <script>
+        function openForm() {
+          document.getElementById("myForm").style.display = "block";
+        }
         
-        <!-- Form to Add an event into the calendar -->
-        <form name='myForm' onsubmit="theFunction()">
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+        </script>
         
-          <table>
-            
-            <tr>
-              <td>Name:</td>
-              <td><input type="text" name="eventName" id="eventName" required></td>
-            </tr>
-            
-            <tr>
-              <td>Type:</td>
-              <td style="display: flex;">
-                <select class="selectMenu" id="eventType" name="eventType" onchange="displayEventSelection()" required>
-                  <option value="">-- Select Event --</option>
-                  <option value="Event">Event</option>
-                  <option value="Free Times">Free Times</option>
-                  <option value="Family Time">Family Time</option>
-                  <option value="Birthday">Birthday</option>
-                </select>
-                <div id="eventColor"></div>
-              </td>
-            </tr>
+    </div>
 
-            <tr>
-              <td>Date:</td>
-              <td><input type="date" name="eventDate" id="eventDate" required></td>
-            </tr>
-            
-            <tr>
-              <td><input type="submit" id="addEventBTN" value="Add Event"></td>
-              <td><button id="closeBTN" onclick="closeForm()" form="noForm">Close Window</button></td>
-            </tr>
+   </section>
 
-          </table>
-        
-        </form>
-        
-      </fieldset>
-    </div>  
-    
-    
-    
+   <script src="Assets/js/jquery.min.js"></script>
+   <script src="Assets/js/moment.min.js"></script>
     <script src="Assets/js/calen.js"></script>
-
   </body>
-  </html>
+</html>

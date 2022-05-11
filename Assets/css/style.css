@@ -622,6 +622,8 @@ select:focus {
     align-items: center;
     padding: 0 2rem;
     text-align: center;
+    width: 450px;
+    height: 450px;
 }
 
 .pref1{
@@ -668,6 +670,17 @@ select:focus {
     height: 35px;
     margin-top: 40px;   
     cursor: pointer;
+}
+.S-details{
+    margin-top: 50px;
+    
+    
+}
+.set-out{
+    width: 100px;
+}
+.des{
+    
 }
 
 /*-- Calendat --*/

@@ -37,21 +37,21 @@ function displayEventSelection() {
     case "Select Event":
       eventColor = "";
       break;
+    
+    case "Birthday":
+      eventColor = "rgba(255, 10, 120, 1)";
+      break;
   
     case "Wedding":
       eventColor = "rgba(156, 202, 235, 1)";
       break;
     
-    case "Free Times":
+    case "Event":
       eventColor = "rgba(247, 167, 0, 1)";
       break;
     
     case "Family Time":
       eventColor = "rgba(249, 233, 0, 1)";
-      break;
-    
-    case "Birthday":
-      eventColor = "rgba(255, 10, 120, 1)";
       break;
 
     default:
@@ -573,6 +573,9 @@ function theFunction() {
   var eventColor = "";
   var eventDate = document.myForm.eventDate.value;
 
+
+
+  //Each Time into the color
   switch (eventType) {
 
     case "Event":
@@ -635,10 +638,11 @@ function theFunction() {
       var c = data.splice(a, 1);
       /*for(var z in data)
                         	console.log(z);*/
+    
 localStorage.setItem("data", JSON.stringify(data));
       
 
-  //Confirmation of the deleted details
+//Confirmation of the deleted details
 
   for (var a of data) {
     console.log(a);

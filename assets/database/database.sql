@@ -125,4 +125,7 @@ INSERT INTO `Preferences` (`Name`) VALUES ('travel');
 INSERT INTO `Preferences` (`Name`) VALUES ('toys');
 INSERT INTO `Preferences` (`Name`) VALUES ('cooking');
 
-SELECT * FROM `Users` WHERE `Email` = 'yarnitopper@gmail.com' AND `Password` = 'password123';
+INSERT INTO Event_Category (`Name`) VALUES ('Event');
+INSERT INTO Event_Category (`Name`) VALUES ('Wedding');
+INSERT INTO Event_Category (`Name`) VALUES ('Party');
+INSERT INTO Event_Category (`Name`) VALUES ('Birthday');

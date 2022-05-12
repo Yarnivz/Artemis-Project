@@ -50,7 +50,7 @@ function displayEventSelection() {
       eventColor = "rgba(247, 167, 0, 1)";
       break;
     
-    case "Family Time":
+    case "Party":
       eventColor = "rgba(249, 233, 0, 1)";
       break;
 
@@ -582,16 +582,17 @@ function theFunction() {
       eventColor = "blue";
       break;
     
-    case "Free Times":
+    case "Wedding":
       eventColor = "orange";
       break;
     
-    case "Family Time":
+    case "Party":
       eventColor = "yellow";
       break;
 
     case "Birthday":
         eventColor = "red";
+      break;
 
     default:
       eventColor = "green";

@@ -27,13 +27,13 @@
         <?php
             if ($num_rows < 1) {
                 echo "Login Failed, please check if your e-mail or password is correct!";
-                header("Location: login.html");
+                header("Location: login1.php");
             }
             else {
                 echo "Login Succesful!";
                 $_SESSION["isLoggedIn"] = True;
                 $_SESSION["loggedUser"] = $loggedUser;
-                header("Location: calendar.html");
+                header("Location: calendar.php");
             }
         
         ?>

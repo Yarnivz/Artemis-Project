@@ -32,7 +32,7 @@
     mysqli_query($conn,$sqlInsert2);
     mysqli_query($conn,$sqlInsert3);
 
-    header("Location: login.html");
+    header("Location: login1.php");
 ?>
 
 <?php

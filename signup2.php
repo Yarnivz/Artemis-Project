@@ -38,12 +38,12 @@
     <?php
         if ($result == false){
             echo "Account creation failed";
-            header("Location: singup.html");
+            header("Location: singup1.php");
         }
         else {
             echo "Account succesfully created";
             $_SESSION["creatingUser"] = $creatingUser;
-            header("Location: preference.html");
+            header("Location: preference1.php");
         }
     ?>
 </h1>

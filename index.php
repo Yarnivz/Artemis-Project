@@ -3,6 +3,10 @@
 Check your friend's Birthday or the Event
 Scroll, choose, go to the shop's website
 Buy the selected gift and enjoy the Birthday! -->
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,10 +24,20 @@ Buy the selected gift and enjoy the Birthday! -->
             <div class="nav-links" id="navlinks"> 
                 <a href="index.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="login.html">LOGIN</a></li>
-                    <li><a href="singup.html">SIGNUP</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
+                    <?php
+                        if ($_SESSION["isLoggedIn"] == True) {
+                            echo '<li><a href="index.php">HOME</a></li>';
+                            echo '<li><a href="calendar.php">CALENDAR</a></li>';
+                            echo '<li><a href="settings.php">SETTINGS</a></li>';
+                            echo '<li><a href="about.php">ABOUT US</a></li>';
+                        }
+                        else {
+                            echo '<li><a href="index.php">HOME</a></li>';
+                            echo '<li><a href="login1.php">LOGIN</a></li>';
+                            echo '<li><a href="singup1.php">SIGNUP</a></li>';
+                            echo '<li><a href="about.php">ABOUT US</a></li>';
+                        }
+                    ?>
                 </ul>
 
             </div>
@@ -36,7 +50,7 @@ Buy the selected gift and enjoy the Birthday! -->
             <p>
                 "Let us help you to make a BD choice"
             </p>
-            <a href="tour.html" class="hero-btn">
+            <a href="tour.php" class="hero-btn">
                 Quick Tour 
             </a>
             

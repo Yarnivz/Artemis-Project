@@ -14,10 +14,10 @@
             <div class="nav-links" id="navlinks"> 
                 <a href="index.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
                 <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="login.html">LOGIN</a></li>
-                    <li><a href="singup.html">SIGNUP</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="index.php">HOME</a></li>
+                    <li><a href="login1.php">LOGIN</a></li>
+                    <li><a href="signup1.php">SIGNUP</a></li>
+                    <li><a href="about.php">ABOUT US</a></li>
                 </ul>
 
             </div>

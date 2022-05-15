@@ -1,13 +1,12 @@
 <?php 
     
     include "assets/database/connection.php";
+    include "functions.php";
 
     $conn = dbConnection();
     session_start();
-
-    if ($_SESSION["isLoggedIn"] != True) {
-        header("Location: login.html");
-    }
+    authenticate();
+    
     $firstname = $_SESSION["loggedUser"]["FirstName"]; 
     $lastname = $_SESSION["loggedUser"]["LastName"]; 
     $email = $_SESSION["loggedUser"]["Email"];

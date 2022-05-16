@@ -1,3 +1,5 @@
+
+
 //Loading in the calendar function
 window.document.onload = theFunction();
 
@@ -606,15 +608,29 @@ function theFunction() {
 
   var data = JSON.parse(localStorage.getItem("data"));
 
-  if (data == null) data = [];
 
+  //When the data is null --> nothing will be stored in there ! 
+
+  if (data == null) 
+  {
+    data = [];
+  }
+  
+  
+
+
+  //Only the required data will be stored under these conditions ! 
   if (eventName != "" && eventType != "" && eventColor != "" && eventDate != "")
     data.push({
       eventName: eventName,
       calendar: eventType,
       color: eventColor,
       date: eventDate
-    });
+  });
+  
+
+
+
   for (var a of data) {
     console.log(a);
   }

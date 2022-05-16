@@ -1,5 +1,3 @@
-
-
 //Loading in the calendar function
 window.document.onload = theFunction();
 

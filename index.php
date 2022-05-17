@@ -4,6 +4,7 @@ Check your friend's Birthday or the Event
 Scroll, choose, go to the shop's website
 Buy the selected gift and enjoy the Birthday! -->
 <?php
+    include "functions.php";
     session_start();
 ?>
 
@@ -22,21 +23,10 @@ Buy the selected gift and enjoy the Birthday! -->
         <nav>
             
             <div class="nav-links" id="navlinks"> 
-                <a href="index.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
+                <a href="index.php"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
                 <ul>
                     <?php
-                        if ($_SESSION["isLoggedIn"] == True) {
-                            echo '<li><a href="index.php">HOME</a></li>';
-                            echo '<li><a href="calendar.php">CALENDAR</a></li>';
-                            echo '<li><a href="settings.php">SETTINGS</a></li>';
-                            echo '<li><a href="about.php">ABOUT US</a></li>';
-                        }
-                        else {
-                            echo '<li><a href="index.php">HOME</a></li>';
-                            echo '<li><a href="login1.php">LOGIN</a></li>';
-                            echo '<li><a href="singup1.php">SIGNUP</a></li>';
-                            echo '<li><a href="about.php">ABOUT US</a></li>';
-                        }
+                        navbar();
                     ?>
                 </ul>
 

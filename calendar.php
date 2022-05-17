@@ -1,3 +1,9 @@
+<?php
+  include "functions.php";
+  session_start();
+  authenticate();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   
@@ -17,10 +23,9 @@
           <div class="nav-links" id="navlinks"> 
               <a href="indexLoggedIn.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
               <ul>
-                  <li><a href="index.php">HOME</a></li>
-                  <li><a href="settings.php">SETTINGS</a></li>
-                  <li><a href="logout.php">LOGOUT</a></li>
-                  <li><a href="about.php">ABOUT US</a></li>
+                  <?php
+                    navbar();
+                  ?>
               </ul>
           </div>
       </nav>

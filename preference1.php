@@ -1,3 +1,7 @@
+<?php
+    include "functions.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,10 +18,9 @@
             <div class="nav-links" id="navlinks"> 
                 <img src="assets/images/log2.png" class="logo" alt="index.html">
                 <ul>
-                    <li><a href="index.php">HOME</a></li>
-                    <li><a href="login1.php">LOGIN</a></li>
-                    <li><a href="singup1.php">SIGNUP</a></li>
-                    <li><a href="about.php">ABOUT US</a></li>
+                    <?php
+                        navbar();
+                    ?>
                 </ul>
 
             </div>

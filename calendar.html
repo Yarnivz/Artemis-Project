@@ -45,16 +45,20 @@
         
           <table>
             
+            <!-- Usage Name of the event -->
             <tr>
               <td>Name:</td>
               <td><input type="text" name="eventName" id="eventName" required></td>
             </tr>
             
+
+
+
+            <!-- Usage Type of the event -->
             <tr>
               <td>Type:</td>
               <td style="display: flex;">
                 <select class="selectMenu" id="eventType" name="eventType" onchange="displayEventSelection()" required>
-                  <option value="Select Event">-- Select Event --</option>
                   <option value="Birthday">Birthday</option>
                   <option value="Wedding">Wedding</option>
                   <option value="Party">Party</option>
@@ -65,10 +69,17 @@
               </td>
             </tr>
 
+
+            <!-- Usage Date of the event  -->
+
+
             <tr>
               <td>Date:</td>
               <td><input type="date" name="eventDate" id="eventDate" required></td>
             </tr>
+            
+
+            <!-- Usage submit & close form -->
             
             <tr>
               <td><input type="submit" id="addEventBTN" value="Add Event"></td>

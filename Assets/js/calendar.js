@@ -710,38 +710,43 @@ localStorage.setItem("data", JSON.stringify(data));
 
 //Inserting the Events to the database
 
-$("").submit(function(e){
-    e.preventDefault();
+// $("").submit(function(e){
+//     e.preventDefault();
 
-    $.post(
-        '.php',
-          $("form : input").serializeArray(),
-        function(result)
-        {
-          if(result === "success")
-          {
-            $("#result").html("Successfull Entry");
-          }
-          else
-          {
+//     $.post(
+//         '.php',
+//           $("form : input").serializeArray(),
+//         function(result)
+//         {
+//           if(result === "success")
+//           {
+//             $("#result").html("Successfull Entry");
+//           }
+//           else
+//           {
 
-          }
+//           }
 
-        }
+//         }
+
+//     )
+
+// })
+
+//Adding event to database
+
+function addEventsToData()
+{
+  var valueEventName = document.getElementById("eventName").value;
+  var valueEventType = document.getElementById("eventType").value;
+  var valueDate = document.getElementById("eventDate").value;
+
+  var httpr = new XMLHttpRequest();
+  httpr.open("POST", "calendar-insert-data.php",true);
+  httpr.send();
 
 
-
-
-
-
-
-
-
-    )
-
-})
-
-
+}
 
 
 

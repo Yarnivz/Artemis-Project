@@ -81,8 +81,8 @@ CREATE TABLE Gifts (
 `Shop` VARCHAR(50) NOT NULL,
 `Price` DOUBLE NOT NULL,
 `Website` VARCHAR(1000),
-`EventCategory` INT,
-FOREIGN KEY (EventCategory) REFERENCES Event_Category(CategoryID)
+`Preference` INT,
+FOREIGN KEY ( Preference) REFERENCES Preferences( PreferenceID)
 );
 
 CREATE TABLE Favorite (

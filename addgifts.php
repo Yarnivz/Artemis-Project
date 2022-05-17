@@ -9,39 +9,28 @@
 <body>
     
     <?php
+    // creating connection
+    include "Assets/database/connection.php";
+    $conn = dbConnection(); 
 
-   $mysqli = new mysqli('localhost', 'root', 'root', 'trial');
-if($mysqli->connect_errno != 0){
-    echo $mysqli->connect_error;
-    exit();
-    
-}
-
-
-$json_data = file_get_contents("ex.json");
-$products = json_decode($json_data, JSON_OBJECT_AS_ARRAY);
-
-$stmt = $mysqli->prepare("
-INSERT INTO Gifts(ProductName, Shop, Price, Website,EventCategory) VALUES(?,?,?,?,?)
-");
-$stmt->bind_param("ssdsi", $ProductName, $Shop, $Price, $Website,$EventCategory);
-
-$inserted_rows = 0;
-foreach ($Gifts as $Gift) {
-    $ProductName = $Gift["ProductName"];
-    $Shop = $Gift["Shop"];
-    $Price = $Gift["Price"];
-    $Website= $Gift["Website"];
-    $EventCategory= $Gift["EventCategory"];
-    
-    $stmt->execute();
-    $inserted_rows ++;
-}
-if(count($Gifts) == $inserted_rows){
-    echo "succes";
-}else{
-    echo "error";
-}
+    // fetching the json data, parsing to an assoc array
+    $json_data = file_get_contents("./assets/API/gifts.json");
+    $products = json_decode($json_data, JSON_OBJECT_AS_ARRAY);
+  
+    foreach ($products as $product) {
+        
+        $ProductName = $product["ProductName"];
+        $Shop = $product["Shop"];
+        $Price = $product["Price"];
+        $Website= $product["Website"];
+        $Preference= $product["Preference"];
+        
+        $sqlQuery = "INSERT INTO Gifts(ProductName, Shop, Price, Website,Preference) VALUES('$ProductName','$Shop',$Price,'$Website',$Preference)";
+        $result = mysqli_query($conn, $sqlQuery);
+        var_dump($product);
+        $stmt->execute();
+    }
+   
 
 ?>
 </body>

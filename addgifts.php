@@ -25,10 +25,10 @@
         $Website= $product["Website"];
         $Preference= $product["Preference"];
         
-        $sqlQuery = "INSERT INTO Gifts(ProductName, Shop, Price, Website,Preference) VALUES('$ProductName','$Shop',$Price,'$Website',$Preference)";
+        $sqlQuery = "INSERT INTO Gifts(ProductName, Shop, Price, Website,Preference) VALUES('$ProductName','$Shop','$Price','$Website',$Preference)";
         $result = mysqli_query($conn, $sqlQuery);
         var_dump($product);
-        $stmt->execute();
+        //$stmt->execute();
     }
    
 

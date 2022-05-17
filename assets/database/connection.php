@@ -4,7 +4,7 @@
         $username = "root";
         $password = "root";
         $databasename = "BDAY";
-        $port = "8889";
+        $port = "3306";
 
         $conn = mysqli_connect($hostname, $username, $password, $databasename, $port);
 

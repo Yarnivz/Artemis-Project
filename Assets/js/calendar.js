@@ -740,8 +740,17 @@ function addEventsToData()
   var valueEventName = document.getElementById("eventName").value;
   var valueEventType = document.getElementById("eventType").value;
   var valueDate = document.getElementById("eventDate").value;
-
+  
   var httpr = new XMLHttpRequest();
+  
+  httpr.onreadystatechange = function()
+  {
+       if(this.readyState == 4 && this.status == 200)
+       {
+         document.getElementById("").innerHTML = this.responseText;
+       }
+  };
+  
   httpr.open("POST", "calendar-insert-data.php",true);
   httpr.send();
 

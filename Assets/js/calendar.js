@@ -33,20 +33,36 @@ function displayEventSelection() {
   var eventType = document.myForm.eventType.value;
   var eventColor = "";
   switch (eventType) {
-    case "Event":
+    
+    case "Select Event":
+      eventColor = "";
+      break;
+    
+    case "Birthday":
+      eventColor = "rgba(255, 10, 120, 1)";
+      break;
+  
+    case "Wedding":
       eventColor = "rgba(156, 202, 235, 1)";
       break;
-    case "Free Times":
+    
+    case "Event":
       eventColor = "rgba(247, 167, 0, 1)";
       break;
-    case "Family Time":
+    
+    case "Party":
       eventColor = "rgba(249, 233, 0, 1)";
       break;
+
     default:
-      eventColor = "rgba(153, 198, 109, 1)";
+    eventColor = "rgba(153, 198, 109, 1)";
+      break;
   }
   $("#eventColor").css("background", eventColor);
 }
+
+
+
 
 
 // The Calendar Function
@@ -55,6 +71,7 @@ function theFunction() {
 
   //Calling out the day of today
   var today = moment();
+  
   function Calendar(selector, events) {
     this.el = document.querySelector(selector);
     this.events = events;
@@ -103,15 +120,20 @@ function theFunction() {
       this.header = createElement("div", "header");
       this.header.className = "header";
       this.title = createElement("h1");
+
+      //Right Cursor
       var right = createElement("div", "right");
       right.addEventListener("click", function() {
         self.nextMonth();
       });
 
+
+      //Left Cursor
       var left = createElement("div", "left");
       left.addEventListener("click", function() {
         self.prevMonth();
       });
+
 
       //Append the Elements
       this.header.appendChild(this.title);
@@ -147,7 +169,9 @@ function theFunction() {
           self.month.className = "month in " + (self.next ? "next" : "prev");
         }, 16);
       });
-    } else {
+    }
+    else 
+    {
       this.month = createElement("div", "month");
       this.el.appendChild(this.month);
       this.backFill();
@@ -155,6 +179,7 @@ function theFunction() {
       this.fowardFill();
       this.month.className = "month new";
     }
+
   };
 
   // Day Of the Week display into the days
@@ -172,7 +197,7 @@ function theFunction() {
     }
   };
 
-
+  //The Functionality of the month 
   Calendar.prototype.fowardFill = function() {
     var clone = this.current
       .clone()
@@ -200,6 +225,7 @@ function theFunction() {
     }
   };
 
+
   // Function for the day of the week
   Calendar.prototype.getWeek = function(day) {
     if (!this.week || day.day() === 0) {
@@ -207,6 +233,9 @@ function theFunction() {
       this.month.appendChild(this.week);
     }
   };
+
+
+
 
   // Function for the days
   Calendar.prototype.drawDay = function(day) {
@@ -221,6 +250,9 @@ function theFunction() {
         self.openDay(this);
       });
     }
+
+
+
 
     //Day Name
     var name = createElement("div", "day-name", day.format("ddd"));
@@ -239,6 +271,8 @@ function theFunction() {
   };
 
 
+
+
   Calendar.prototype.drawEvents = function(day, element) {
     if (day.month() === this.current.month()) {
       var todaysEvents = this.events.reduce(function(memo, ev) {
@@ -247,6 +281,9 @@ function theFunction() {
         }
         return memo;
       }, []);
+
+
+
 
       todaysEvents.forEach(function(ev) {
         var evSpan = createElement("span", ev.color);
@@ -276,12 +313,12 @@ function theFunction() {
     var day = this.current.clone().date(dayNumber);
     var currentOpened = document.querySelector(".details");
 
-    //Check to see if there is an open detais box on the current row
+    //Check to see if there is an open details box on the current row
     // if (currentOpened && currentOpened.parentNode === el.parentNode) {
     //   details = currentOpened;
     //   arrow = document.querySelector(".arrow");
     // } else {
-      //Close the open events on differnt week row
+      //Close the open events on different week row
       //currentOpened && currentOpened.parentNode.removeChild(currentOpened);
       
       if (currentOpened) {
@@ -304,7 +341,9 @@ function theFunction() {
         currentOpened.className = "details out";
       }
 
+
       //Create the Details Container
+      //Shows what detail is added to the calendar
       details = createElement("div", "details in");
 
       var group1 = createElement("div", "detailsHeader");
@@ -322,6 +361,8 @@ function theFunction() {
       );
     // }
 
+
+
     var todaysEvents = this.events.reduce(function(memo, ev) {
       if (ev.date.isSame(day, "day")) {
         memo.push(ev);
@@ -335,6 +376,14 @@ function theFunction() {
     // arrow.style.left = el.offsetLeft - el.parentNode.offsetLeft + 27 + "px";
   };
 
+
+
+
+
+
+
+
+
   // Calendar Render
 
   Calendar.prototype.renderEvents = function(events, ele) {
@@ -347,8 +396,8 @@ function theFunction() {
 
     events.forEach(function(ev) {
       var div = createElement("div", "event");
-      var group1 = createElement("div", "eventgrp");
-      var group2 = createElement("div", "eventgrp");
+      var group1 = createElement("div", "eventgroup");
+      var group2 = createElement("div", "eventgroup");
       var square = createElement("div", "event-category " + ev.color);
       var span = createElement("span", "", ev.eventName);
       var del = createElement("button", "delBTN", "x");
@@ -397,6 +446,13 @@ function theFunction() {
   };
 
 
+
+
+
+
+
+
+
   // Function of Legend
 
   Calendar.prototype.drawLegend = function() {
@@ -442,7 +498,7 @@ function theFunction() {
 
 
 
-  //Calling The NEXT MONTH Button Function
+  //Calling The Next Month Function
   Calendar.prototype.nextMonth = function() {
     this.current.add(1, "months");
     this.next = true;
@@ -469,7 +525,7 @@ function theFunction() {
 
 
 
-  //Calling The Previous Month Functon
+  //Calling The Previous Month Function
   Calendar.prototype.prevMonth = function() {
     this.current.subtract(1, "months");
     this.next = false;
@@ -494,7 +550,7 @@ function theFunction() {
 
 
 
-  // headstart
+  // Head Start
   window.Calendar = Calendar;
 
   // calling out the classes, id's and innerText
@@ -505,7 +561,7 @@ function theFunction() {
     }
 
     if (innerText) {
-      ele.innderText = ele.textContent = innerText;
+      ele.innerText = ele.textContent = innerText;
     }
  
     return ele;
@@ -517,18 +573,25 @@ function theFunction() {
   var eventColor = "";
   var eventDate = document.myForm.eventDate.value;
 
+
+
+  //Each Time into the color
   switch (eventType) {
-    
+
     case "Event":
       eventColor = "blue";
       break;
     
-    case "Free Times":
+    case "Wedding":
       eventColor = "orange";
       break;
     
-    case "Family Time":
+    case "Party":
       eventColor = "yellow";
+      break;
+
+    case "Birthday":
+        eventColor = "red";
       break;
 
     default:
@@ -537,19 +600,35 @@ function theFunction() {
   
   }
   
+
   // Storing each category into the local data
-  
+  //UPDATE --> Connect it with SQL/ JSON 
+
   var data = JSON.parse(localStorage.getItem("data"));
 
-  if (data == null) data = [];
 
+  //When the data is null --> nothing will be stored in there ! 
+
+  if (data == null) 
+  {
+    data = [];
+  }
+  
+  
+
+
+  //Only the required data will be stored under these conditions ! 
   if (eventName != "" && eventType != "" && eventColor != "" && eventDate != "")
     data.push({
       eventName: eventName,
       calendar: eventType,
       color: eventColor,
       date: eventDate
-    });
+  });
+  
+
+
+
   for (var a of data) {
     console.log(a);
   }
@@ -574,8 +653,12 @@ function theFunction() {
       var c = data.splice(a, 1);
       /*for(var z in data)
                         	console.log(z);*/
+    
 localStorage.setItem("data", JSON.stringify(data));
       
+
+//Confirmation of the deleted details
+
   for (var a of data) {
     console.log(a);
   }
@@ -598,3 +681,67 @@ localStorage.setItem("data", JSON.stringify(data));
 
   toggleForm();
 }
+
+//Getting the Customer from the database
+
+// function showUser()
+// { 
+//   var xhttp;
+
+//   if(string == "")
+//   {
+//     document.getElementById("").innerHTML = "";
+//     return;
+//   }
+
+//   xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function()
+//   {
+//     if(this.readyState == 4 && this.status == 200)
+//     {
+//       document.getElementById("").innerHTML = this.responseText;
+//     }
+//   };
+
+//   xhttp.open("GET", ".php?q="+string,true);
+//   xhttp.send();
+
+// }
+
+//Inserting the Events to the database
+
+$("").submit(function(e){
+    e.preventDefault();
+
+    $.post(
+        '.php',
+          $("form : input").serializeArray(),
+        function(result)
+        {
+          if(result === "success")
+          {
+            $("#result").html("Successfull Entry");
+          }
+          else
+          {
+
+          }
+
+        }
+
+
+
+
+
+
+
+
+
+    )
+
+})
+
+
+
+
+

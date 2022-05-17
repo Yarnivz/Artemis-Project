@@ -313,12 +313,12 @@ function theFunction() {
     var day = this.current.clone().date(dayNumber);
     var currentOpened = document.querySelector(".details");
 
-    //Check to see if there is an open detais box on the current row
+    //Check to see if there is an open details box on the current row
     // if (currentOpened && currentOpened.parentNode === el.parentNode) {
     //   details = currentOpened;
     //   arrow = document.querySelector(".arrow");
     // } else {
-      //Close the open events on differnt week row
+      //Close the open events on different week row
       //currentOpened && currentOpened.parentNode.removeChild(currentOpened);
       
       if (currentOpened) {
@@ -396,8 +396,8 @@ function theFunction() {
 
     events.forEach(function(ev) {
       var div = createElement("div", "event");
-      var group1 = createElement("div", "eventgrp");
-      var group2 = createElement("div", "eventgrp");
+      var group1 = createElement("div", "eventgroup");
+      var group2 = createElement("div", "eventgroup");
       var square = createElement("div", "event-category " + ev.color);
       var span = createElement("span", "", ev.eventName);
       var del = createElement("button", "delBTN", "x");
@@ -561,7 +561,7 @@ function theFunction() {
     }
 
     if (innerText) {
-      ele.innderText = ele.textContent = innerText;
+      ele.innerText = ele.textContent = innerText;
     }
  
     return ele;
@@ -681,3 +681,67 @@ localStorage.setItem("data", JSON.stringify(data));
 
   toggleForm();
 }
+
+//Getting the Customer from the database
+
+// function showUser()
+// { 
+//   var xhttp;
+
+//   if(string == "")
+//   {
+//     document.getElementById("").innerHTML = "";
+//     return;
+//   }
+
+//   xhttp = new XMLHttpRequest();
+//   xhttp.onreadystatechange = function()
+//   {
+//     if(this.readyState == 4 && this.status == 200)
+//     {
+//       document.getElementById("").innerHTML = this.responseText;
+//     }
+//   };
+
+//   xhttp.open("GET", ".php?q="+string,true);
+//   xhttp.send();
+
+// }
+
+//Inserting the Events to the database
+
+$("").submit(function(e){
+    e.preventDefault();
+
+    $.post(
+        '.php',
+          $("form : input").serializeArray(),
+        function(result)
+        {
+          if(result === "success")
+          {
+            $("#result").html("Successfull Entry");
+          }
+          else
+          {
+
+          }
+
+        }
+
+
+
+
+
+
+
+
+
+    )
+
+})
+
+
+
+
+

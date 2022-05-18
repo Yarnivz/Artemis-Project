@@ -37,71 +37,63 @@
 
             </div>
                 
-            <div class="settings">
-        <h4 class="des">Account settings</h4>
-        <div class="">
-            <div class="row py-2">
-            </div>
-                </br>
-                </br>
-                </br>
-                </br>
+        <div class="settings">
 
-                <div class="S-details">
-
-                    <h3>
-                        First Name
-                    </h3>
-                    <br>
-                    <h4>
-                        <?php
-                            echo $firstname;
-                        ?>
-                    </h4>
-                    <br>
-                    <h3>
-                        Last Name
-                    </h3>
-                    <br>
-                    <h4>
-                        <?php
-                            echo $lastname;
-                        ?>                            
-                    </h4>
-                    <br>
-                    <h3>
-                        E-mail
-                    </h3>
-                    <br>
-                    <h4>
-                        <?php
-                            echo $email;
-                        ?>
-                    </h4>
-
+            <h4 class="des">Account settings</h4>
+            <div class="">
+                <div class="row py-2">
                 </div>
+                    </br>
+                    
+                
 
+                    <div class="S-details">
 
-            <div class="" id="deactivate">
-                <div class="tag">
-                </div>
+                        <h3>
+                            First Name
+                        </h3>
+                        <br>
+                        <h4 class="detail">
+                            <?php
+                                echo $firstname;
+                            ?>
+                        </h4 class="detail">
+                        <br>
+                        <h3>
+                            Last Name
+                        </h3>
+                        <br>
+                        <h4 class="detail">
+                            <?php
+                                echo $lastname;
+                            ?>                            
+                        </h4>
+                        <br>
+                        <h3>
+                            E-mail
+                        </h3>
+                        <br>
+                        <h4 class="detail">
+                            <?php
+                                echo $email;
+                            ?>
+                        </h4>
 
-                </br>
-                </br>
-                </br>
+                    </div>
+                    </div>
 
-              
+                    </br>
+                    </br>
                 
 
 
-
-                <form method="POST" action = "logout.php">
-                    <button type="submit" class="set-out"> Log out </button>
-                </form>
+                    <form method="POST" action = "logout.php">
+                        <button type="submit" class="set-out"> Log out </button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </div>
 
+            </div>
           
         </nav>
         

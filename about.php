@@ -29,7 +29,7 @@
         </nav>
         <div class="text-box">
             <h1>
-                WHO ARE BD"S
+                WHO ARE B-DAYS
             </h1>
             <p>
         

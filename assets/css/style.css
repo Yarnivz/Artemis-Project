@@ -471,7 +471,6 @@ button:hover{
 
 .settings {
    
-
     padding: 3px 50px;
     border-radius: 15px;
     margin: 10px auto;
@@ -482,7 +481,7 @@ button:hover{
 
 h4 {
     text-align: center;
-    font-size: 30px;
+ 
 }
 
 .tag{
@@ -673,14 +672,21 @@ select:focus {
 }
 .S-details{
     margin-top: 50px;
+    font-size: 15px;
+
     
     
 }
 .set-out{
     width: 100px;
+    margin-top: 60px;
 }
 .des{
+    font-size: 30px;
     
+}
+.detail{
+    color: #903753;
 }
 
 /*-- Calendat --*/

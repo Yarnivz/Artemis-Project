@@ -26,6 +26,7 @@
     background-repeat: no-repeat;
     background-image: url(../images/background14.png);
     background-position: relative;
+    
 
 
   }
@@ -37,9 +38,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    margin-left: 10%;
     box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
     border-radius: 15px;
+    background-color: rgba(255, 255, 2555, 0.5);
+
+  
+   
     
   }
 

@@ -34,7 +34,7 @@
   #calendar {
     width: 30%;
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -259,8 +259,8 @@
   
   .details.out .events {
   -webkit-animation: fadeOutShrink .4s ease both;
-  -moz-animation: fadeOutShink .4s ease both;
-  animation: fadeOutShink .4s ease both;
+  -moz-animation: fadeOutShrink .4s ease both;
+  animation: fadeOutShrink .4s ease both;
   }
   
   .events.out {
@@ -332,8 +332,8 @@
   position: absolute;
   width: 70px;
   height: 70px;
-  bottom: 5%;
-  right: 5%;
+  bottom: 0%;
+  right: -15%;
   font-size: 80px;
   background-color: rgba(200,200,200,0.5);
   color: rgb(255, 255, 255);

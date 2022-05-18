@@ -38,7 +38,7 @@
     <?php
         if ($result == false){
             echo "Account creation failed";
-            header("Location: singup1.php");
+            header("Location: signup1.php");
         }
         else {
             echo "Account succesfully created";

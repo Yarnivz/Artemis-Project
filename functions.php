@@ -21,7 +21,7 @@
         else {
             echo '<li><a href="index.php">HOME</a></li>';
             echo '<li><a href="login1.php">LOGIN</a></li>';
-            echo '<li><a href="singup1.php">SIGNUP</a></li>';
+            echo '<li><a href="signup1.php">SIGNUP</a></li>';
             echo '<li><a href="about.php">ABOUT US</a></li>';
         }
     }

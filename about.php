@@ -29,7 +29,7 @@
         </nav>
         <div class="text-box">
             <h1>
-                WHO ARE B-DAYS
+                MEET OUR TEAM
             </h1>
             <p>
         

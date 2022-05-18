@@ -27,12 +27,12 @@
         <nav>
             
             <div class="nav-links" id="navlinks"> 
-                <a href="indexLoggedIn.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
+                <a href="index.php"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
                 <ul>
                     <li><a href="index.php">HOME</a></li>
                     <li><a href="calendar.php">CALENDAR</a></li>
                     <li><a href="friends.php">FRIENDS</a></li>
-                    <li><a href="about.html">ABOUT US</a></li>
+                    <li><a href="about.php">ABOUT US</a></li>
                 </ul>
 
             </div>

@@ -31,32 +31,34 @@
         
         <div class="text-box">
             
-            <h1>
-                How BD Works
-            </h1>
+            <h2 class="des">
+                How B-DAY Works
+            </h2>
             <br>
-            <h3>
+            <h3 class="detail">
                 Step 1
             <h3>
                 <p class="">
                     Log In or Create an Account
                    
                 </p>
+
+                <img src="" alt="">
             
             
-            <h3>
+            <h3 class="detail">
                 Step 2
             <h3>
             <p>
                     Choose your friend's Birthday or Event
             </p>
-            <h3>
+            <h3 class="detail">
                 Step 3
             <h3>
             <p>
                     Scroll through the gifts and go to the third-parties website
             </p>
-            <h3>
+            <h3 class="detail">
                 Step 4
             <h3>
             <p>

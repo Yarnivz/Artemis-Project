@@ -6,5 +6,5 @@
     $_SESSION["isLoggedIn"] = False;
     $_SESSION["loggedUser"] = "";
 
-    header("Location: login.html")
+    header("Location: login1.php")
 ?>

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     function authenticate() {
         if ($_SESSION["isLoggedIn"] != True) {
             header("Location: login1.php");

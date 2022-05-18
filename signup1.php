@@ -1,5 +1,6 @@
 <?php
     include "functions.php";
+    nonauthenticate();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +44,7 @@
                     </select>
 
                     <input type="date" name="birthdate" placeholder="Birthdate" required>
-                    <input type="text" name="email" placeholder="Email"  required>
+                    <input type="email" name="email" placeholder="Email"  required>
                     <input type="password" name="password" placeholder="Password"  required>
                     <input type="password" name="confirm_password" placeholder="Confirm Password"  required>
                     <button type="submit"> Sign up </button>

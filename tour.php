@@ -16,7 +16,7 @@
         <nav>
             
             <div class="nav-links" id="navlinks"> 
-                <a href="index.html"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
+                <a href="index1.php"><img src="assets/images/log2.png" class="logo" alt="index.html"> </a>
                 <ul>
                     <?php
                         navbar();
@@ -32,7 +32,7 @@
         <div class="text-box">
             
             <h1>
-            How BD Works
+                How BD Works
             </h1>
             <br>
             <h3>

@@ -39,7 +39,7 @@ Buy the selected gift and enjoy the Birthday! -->
                         <div class="search">
                             <img src="assets/images/search.png" alt="">
 
-                            <form action="searchfriends.php" method="POST">
+                            <form action="searchfriends2.php" method="POST">
                                 
                                 <input type="text" class="enterA" placeholder="Enter a friend's name" name="fullname">
                                 

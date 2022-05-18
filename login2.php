@@ -5,7 +5,7 @@
     session_start();
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $sqlQuery = "SELECT * FROM Users WHERE `Email` = '$email' AND `Password` = '$password';";
+    $sqlQuery = "SELECT * FROM Users WHERE `Email` = '$email' AND `Password` = MD5('$password');";
     
     $result = mysqli_query($conn,$sqlQuery);
     $num_rows = mysqli_num_rows($result);

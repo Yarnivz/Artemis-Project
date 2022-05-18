@@ -12,7 +12,7 @@
     $password = $_POST["password"];
     $fullname = $firstname . " " . $lastname;
 
-    $sqlInsert = "INSERT INTO `Users` (`firstName`, `lastName`,`fullname`, `gender`, `email`, `password`, `birthdate`) VALUES ('$firstname', '$lastname', '$fullname', '$gender', '$email', '$password', '$birthdate');";
+    $sqlInsert = "INSERT INTO `Users` (`firstName`, `lastName`,`fullname`, `gender`, `email`, `password`, `birthdate`) VALUES ('$firstname', '$lastname', '$fullname', '$gender', '$email', MD5('$password'), '$birthdate');";
 
     $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = '$password';";
 

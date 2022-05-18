@@ -14,7 +14,11 @@ $result = mysqli_query($conn, $sql);
 
 if($result == true)
 {
-    echo "<h2>Mission Accomplished</h2>";
+    echo "<h2>Stored into the data</h2>";
+}
+else
+{
+    echo "<h2>Unstored in the data</h2>";
 }
 
 ?>

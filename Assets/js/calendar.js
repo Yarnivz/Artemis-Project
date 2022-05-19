@@ -29,14 +29,13 @@ function toggleForm() {
 
 
 //Display Value of the form 
+
+//Here you can still change/add events into the calendar
+
 function displayEventSelection() {
   var eventType = document.myForm.eventType.value;
   var eventColor = "";
   switch (eventType) {
-    
-    case "Select Event":
-      eventColor = "";
-      break;
     
     case "Birthday":
       eventColor = "rgba(255, 10, 120, 1)";
@@ -65,13 +64,15 @@ function displayEventSelection() {
 
 
 
-// The Calendar Function
+// The Full Calendar Function
 function theFunction() {
 
 
   //Calling out the day of today
   var today = moment();
   
+
+  //The calendar shows the moment of today
   function Calendar(selector, events) {
     this.el = document.querySelector(selector);
     this.events = events;
@@ -82,6 +83,8 @@ function theFunction() {
     } else {
       this.draw();
     }
+
+
 
     var current = document.querySelector(".today");
 
@@ -116,16 +119,26 @@ function theFunction() {
   Calendar.prototype.drawHeader = function() {
     var self = this;
     if (!this.header) {
-      //Create the header elements
+
+
+
+
+      //To create header elements
       this.header = createElement("div", "header");
       this.header.className = "header";
       this.title = createElement("h1");
+
+
+
 
       //Right Cursor
       var right = createElement("div", "right");
       right.addEventListener("click", function() {
         self.nextMonth();
       });
+
+
+
 
 
       //Left Cursor
@@ -135,11 +148,17 @@ function theFunction() {
       });
 
 
-      //Append the Elements
+
+
+
+      //Append the Elements Of Header, Title, Left & Right
       this.header.appendChild(this.title);
       this.header.appendChild(right);
       this.header.appendChild(left);
       this.el.appendChild(this.header);
+
+
+
     }
 
     this.title.innerHTML = this.current.format("MMMM YYYY");
@@ -183,7 +202,6 @@ function theFunction() {
   };
 
   // Day Of the Week display into the days
-
   Calendar.prototype.backFill = function() {
     var clone = this.current.clone();
     var dayOfWeek = clone.day();
@@ -196,6 +214,13 @@ function theFunction() {
       this.drawDay(clone.add(1, "days"));
     }
   };
+
+
+
+
+
+
+
 
   //The Functionality of the month 
   Calendar.prototype.fowardFill = function() {
@@ -216,6 +241,13 @@ function theFunction() {
 
   
 
+
+
+
+
+
+
+
   // Function for the current month
   Calendar.prototype.currentMonth = function() {
     var clone = this.current.clone();
@@ -224,6 +256,12 @@ function theFunction() {
       clone.add(1, "days");
     }
   };
+
+
+
+
+
+
 
 
   // Function for the day of the week
@@ -360,6 +398,14 @@ function theFunction() {
         el.parentNode.parentNode.childNodes[0]
       );
     // }
+
+
+
+
+
+
+
+
 
 
 
@@ -621,7 +667,7 @@ function theFunction() {
   if (eventName != "" && eventType != "" && eventColor != "" && eventDate != "")
     data.push({
       eventName: eventName,
-      calendar: eventType,
+      type: eventType,
       color: eventColor,
       date: eventDate
   });

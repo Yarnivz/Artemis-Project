@@ -499,7 +499,7 @@ function theFunction() {
 
 
 
-  // Function of Legend
+  //Calling Function of Legend
 
   Calendar.prototype.drawLegend = function() {
     var legend = createElement("div", "legend");

@@ -31,6 +31,8 @@
       </nav>
     </section>
 
+    
+    <!-- Function tool for the calendar  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
@@ -45,33 +47,45 @@
         </legend>
         
         <!-- Form to Add an event into the calendar -->
-        <form name='myForm' onsubmit="theFunction()">
+        <form name='myForm' onsubmit="theFunction()" action="calendar-insert-data.php" method="POST">
         
           <table>
             
+            <!-- Usage Name of the event -->
             <tr>
               <td>Name:</td>
               <td><input type="text" name="eventName" id="eventName" required></td>
             </tr>
             
+
+
+
+            <!-- Usage Type of the event -->
             <tr>
               <td>Type:</td>
               <td style="display: flex;">
                 <select class="selectMenu" id="eventType" name="eventType" onchange="displayEventSelection()" required>
-                  <option value="">-- Select Event --</option>
-                  <option value="Event">Event</option>
-                  <option value="Free Times">Free Times</option>
-                  <option value="Family Time">Family Time</option>
                   <option value="Birthday">Birthday</option>
+                  <option value="Wedding">Wedding</option>
+                  <option value="Party">Party</option>
+                  <option value="Event">Event</option>
+
                 </select>
                 <div id="eventColor"></div>
               </td>
             </tr>
 
+
+            <!-- Usage Date of the event  -->
+
+
             <tr>
               <td>Date:</td>
               <td><input type="date" name="eventDate" id="eventDate" required></td>
             </tr>
+            
+
+            <!-- Usage submit & close form -->
             
             <tr>
               <td><input type="submit" id="addEventBTN" value="Add Event"></td>
@@ -88,6 +102,6 @@
     
     
     <script src="Assets/js/calendar.js"></script>
-
+  
   </body>
   </html>

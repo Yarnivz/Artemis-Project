@@ -42,7 +42,7 @@ function displayEventSelection() {
       break;
   
     case "Wedding":
-      eventColor = "rgba(156, 202, 235, 1)";
+      eventColor = "rgba(0, 149, 255, 1)";
       break;
     
     case "Event":
@@ -275,6 +275,15 @@ function theFunction() {
 
 
 
+
+
+
+
+
+
+
+
+
   // Function for the days
   Calendar.prototype.drawDay = function(day) {
     var self = this;
@@ -288,6 +297,15 @@ function theFunction() {
         self.openDay(this);
       });
     }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -307,6 +325,18 @@ function theFunction() {
     outer.appendChild(events);
     this.week.appendChild(outer);
   };
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -331,6 +361,19 @@ function theFunction() {
   };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
   Calendar.prototype.getDayClass = function(day) {
     var classes = ["day"];
     if (day.month() !== this.current.month()) {
@@ -343,6 +386,20 @@ function theFunction() {
   };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   Calendar.prototype.openDay = function(el) {
     var details, arrow;
     var dayNumber =
@@ -351,13 +408,6 @@ function theFunction() {
     var day = this.current.clone().date(dayNumber);
     var currentOpened = document.querySelector(".details");
 
-    //Check to see if there is an open details box on the current row
-    // if (currentOpened && currentOpened.parentNode === el.parentNode) {
-    //   details = currentOpened;
-    //   arrow = document.querySelector(".arrow");
-    // } else {
-      //Close the open events on different week row
-      //currentOpened && currentOpened.parentNode.removeChild(currentOpened);
       
       if (currentOpened) {
         currentOpened.addEventListener("webkitAnimationEnd", function() {
@@ -380,17 +430,20 @@ function theFunction() {
       }
 
 
+
+
+
+
+
+
+
+
       //Create the Details Container
       //Shows what detail is added to the calendar
       details = createElement("div", "details in");
 
       var group1 = createElement("div", "detailsHeader");
       var todayDate = createElement("div", "todayDate", el.innerText);
-      //Create the arrow
-      //                            var arrow = createElement('div', 'arrow');
-
-      //Create the event wrapper
-      //                            details.appendChild(arrow);
       group1.appendChild(todayDate);
       details.appendChild(group1);
       el.parentNode.parentNode.insertBefore(
@@ -398,12 +451,6 @@ function theFunction() {
         el.parentNode.parentNode.childNodes[0]
       );
     // }
-
-
-
-
-
-
 
 
 
@@ -502,6 +549,9 @@ function theFunction() {
   //Calling Function of Legend
 
   Calendar.prototype.drawLegend = function() {
+    
+    
+    
     var legend = createElement("div", "legend");
     var calendars = this.events
       .map(function(e) {
@@ -513,11 +563,16 @@ function theFunction() {
         }
         return memo;
       }, [])
+
+
       .forEach(function(e) {
         var parts = e.split("|");
         var entry = createElement("span", "entry " + parts[1], parts[0]);
         legend.appendChild(entry);
       });
+
+
+
     var legendDOM = document.getElementsByClassName("legend");
     if (legendDOM.length != 0) {
       this.el.replaceChild(legend, legendDOM[0]);
@@ -599,6 +654,7 @@ function theFunction() {
   // Head Start
   window.Calendar = Calendar;
 
+
   // calling out the classes, id's and innerText
   function createElement(tagName, className, innerText) {
     var ele = document.createElement(tagName);
@@ -625,11 +681,11 @@ function theFunction() {
   switch (eventType) {
 
     case "Event":
-      eventColor = "blue";
+      eventColor = "orange";
       break;
     
     case "Wedding":
-      eventColor = "orange";
+      eventColor = "blue";
       break;
     
     case "Party":
@@ -655,33 +711,38 @@ function theFunction() {
 
   //When the data is null --> nothing will be stored in there ! 
 
-  if (data == null) 
+  if (data === null) 
   {
     data = [];
   }
   
-  
-
-
-  //Only the required data will be stored under these conditions ! 
+  //Only the required data will be stored under these conditions !
+  //Within the object  
   if (eventName != "" && eventType != "" && eventColor != "" && eventDate != "")
+  {
     data.push({
       eventName: eventName,
-      type: eventType,
+      calendar: eventType,
       color: eventColor,
       date: eventDate
   });
+  }
   
 
 
 
-  for (var a of data) {
+  for (var a of data) 
+  {
     console.log(a);
   }
+
   localStorage.setItem("data", JSON.stringify(data));
 
+
+  //An example of 
+
   /*var data = [
-		    	{eventName: 'Lunch Meeting 1', calendar: 'Home', color: 'blue', date: '2019-06-25'}
+		    	{eventName: 'Chill Wedding', calendar: 'Wedding', color: 'blue', date: '2019-06-25'}
 		    ];*/
 
   function delEvent(events) {
@@ -695,91 +756,108 @@ function theFunction() {
         events.date._i +
         "?"
     );
+
     if (b) {
       var c = data.splice(a, 1);
-      /*for(var z in data)
-                        	console.log(z);*/
     
-localStorage.setItem("data", JSON.stringify(data));
-      
-
-//Confirmation of the deleted details
-
-  for (var a of data) {
-    console.log(a);
-  }
-      var calendar = new Calendar("#calendar", data);
-      if (c) {
-        alert("Event deleted successfully");
-      } else {
-        alert("Failed to delete event");
+      /*for(var z in data)
+      {
+        console.log(z);
       }
-    } else {
-      //alert("Cancelled deletion");
+      */
+
+    localStorage.setItem("data", JSON.stringify(data));
+          
+
+    //Confirmation of the deleted details
+
+      for (var a of data) {
+        console.log(a);
+      }
+          var calendar = new Calendar("#calendar", data);
+          if (c) {
+            alert("Event deleted successfully !");
+          } else {
+            alert("Failed to delete event !");
+          }
+        } else {
+          //alert("Cancelled deletion");
+        }
+      }
+
+      var calendar = new Calendar("#calendar", data);
+
+      document.myForm.eventName.value = "";
+      document.myForm.eventType.value = "";
+      document.myForm.eventDate.value = "";
+
+      toggleForm();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Getting the Customer from the database
+
+function showUser()
+{ 
+  var xhttp;
+
+  if(string == "")
+  {
+    document.getElementById("").innerHTML = "";
+    return;
   }
 
-  var calendar = new Calendar("#calendar", data);
+  xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function()
+  {
+    if(this.readyState == 4 && this.status == 200)
+    {
+      document.getElementById("").innerHTML = this.responseText;
+    }
+  };
 
-  document.myForm.eventName.value = "";
-  document.myForm.eventType.value = "";
-  document.myForm.eventDate.value = "";
+  xhttp.open("GET", ".php?q="+string,true);
+  xhttp.send();
 
-  toggleForm();
 }
 
-//Getting the Customer from the database
+// Inserting the Events to the database
 
-// function showUser()
-// { 
-//   var xhttp;
+$("").submit(function(e){
+    e.preventDefault();
 
-//   if(string == "")
-//   {
-//     document.getElementById("").innerHTML = "";
-//     return;
-//   }
+    $.post(
+        'calendar-insert-data.php',
+          $("form : input").serializeArray(),
+        function(result)
+        {
+          if(result === "success")
+          {
+            $("#result").html("Successful Entry");
+          }
+          else
+          {
 
-//   xhttp = new XMLHttpRequest();
-//   xhttp.onreadystatechange = function()
-//   {
-//     if(this.readyState == 4 && this.status == 200)
-//     {
-//       document.getElementById("").innerHTML = this.responseText;
-//     }
-//   };
+          }
 
-//   xhttp.open("GET", ".php?q="+string,true);
-//   xhttp.send();
+        }
 
-// }
+    )
 
-//Inserting the Events to the database
+})
 
-// $("").submit(function(e){
-//     e.preventDefault();
-
-//     $.post(
-//         '.php',
-//           $("form : input").serializeArray(),
-//         function(result)
-//         {
-//           if(result === "success")
-//           {
-//             $("#result").html("Successfull Entry");
-//           }
-//           else
-//           {
-
-//           }
-
-//         }
-
-//     )
-
-// })
-
-//Adding event to database
+// Adding event to database
 
 function addEventsToData()
 {
@@ -787,9 +865,9 @@ function addEventsToData()
   var valueEventType = document.getElementById("eventType").value;
   var valueDate = document.getElementById("eventDate").value;
   
-  var httpr = new XMLHttpRequest();
+  var xhttpr = new XMLHttpRequest();
   
-  httpr.onreadystatechange = function()
+  xhttpr.onreadystatechange = function()
   {
        if(this.readyState == 4 && this.status == 200)
        {
@@ -797,8 +875,8 @@ function addEventsToData()
        }
   };
   
-  httpr.open("POST", "calendar-insert-data.php",true);
-  httpr.send();
+  xhttpr.open("POST", "calendar-insert-data.php",true);
+  xhttpr.send();
 
 
 }

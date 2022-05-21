@@ -32,13 +32,12 @@
     </section>
 
     
-    <!-- Function tool for the calendar  -->
+    <!-- Library tool for the calendar  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
     <div id="calendar"></div>
 
-    <!-- The Whole Form dive when you press the + button -->
     <div id='formDiv'>
       <fieldset style='padding:0 20px 20px 20px'>
         

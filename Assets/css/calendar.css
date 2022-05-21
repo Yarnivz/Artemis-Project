@@ -33,6 +33,7 @@
   
   #calendar {
     width: 30%;
+    height: 65%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -322,6 +323,7 @@
   width: 10px;
   top: 9px;
   left: 10px;
+  border-radius: 100%;
   }
             
   .addBTN{

@@ -8,9 +8,13 @@
 
     $conn = dbConnection();
 
-    $sqlDelete = "DELETE FROM 'Events' WHERE 'Name'= $eventName AND 'Type'= $eventType AND 'Date'= $date ;";
+    $sqlDelete = "DELETE FROM `Events` WHERE `Name` = $eventName AND `Type` = '$eventType' AND `Date` = $date;";
+
+    $sqlQuery = "SELECT * FROM `Events` WHERE `Name` = $eventName AND `Type` = '$eventType' AND `Date` = $date;";
 
     $result = mysqli_query($conn, $sqlDelete);
+    $queryResult = mysqli_query($conn, $sqlQuery);
+
 
     if($result == true)
     {

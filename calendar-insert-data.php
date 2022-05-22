@@ -8,9 +8,13 @@
 
     $conn = dbConnection();
 
-    $sql = "INSERT INTO 'Events' ('Name', 'Type', 'Date') VALUES ('$eventName','$eventType', '$date');";
+    $sql = "INSERT INTO `Events` (`Name`, `Type`, `Date`) VALUES ('$eventName','$eventType', '$date');";
+
+    $sqlQuery = "SELECT * FROM `Events` WHERE `Name` = $eventName AND `Type` = '$eventType' AND `Date` = $date;";
 
     $result = mysqli_query($conn, $sql);
+    $queryResult = mysqli_query($conn, $sqlQuery);
+
 
     if($result == true)
     {

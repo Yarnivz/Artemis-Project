@@ -14,11 +14,11 @@ $result = mysqli_query($conn, $sqlDelete);
 
 if($result == true)
 {
-    echo "<h2>Stored into the data</h2>";
+    echo "<h2>Data deletion completed!</h2>";
 }
 else
 {
-    echo "<h2>Unstored in the data</h2>";
+    echo "<h2>Data deletion failed!</h2>";
 }
 
 ?>

@@ -14,11 +14,11 @@ $result = mysqli_query($conn, $sql);
 
 if($result == true)
 {
-    echo "<h2>Stored into the data</h2>";
+    echo "<h2>Data is stored!</h2>";
 }
 else
 {
-    echo "<h2>Unstored in the data</h2>";
+    echo "<h2>Error data is not stored, please try again!</h2>";
 }
 
 ?>

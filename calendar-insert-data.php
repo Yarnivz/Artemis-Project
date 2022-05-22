@@ -1,24 +1,24 @@
 <?php
- 
-include "Assets/database/connection.php";
+    
+    include "Assets/database/connection.php";
 
-$eventName = $_POST['Name'];
-$eventType = $_POST['Type'];
-$date = $_POST['Date'];
+    $eventName = $_POST['Name'];
+    $eventType = $_POST['Type'];
+    $date = $_POST['Date'];
 
-$conn = dbConnection();
+    $conn = dbConnection();
 
-$sql = "INSERT INTO 'Events' ('Name', 'Type', 'Date') VALUES ('$eventName','$eventType', '$date');";
+    $sql = "INSERT INTO 'Events' ('Name', 'Type', 'Date') VALUES ('$eventName','$eventType', '$date');";
 
-$result = mysqli_query($conn, $sql);
+    $result = mysqli_query($conn, $sql);
 
-if($result == true)
-{
-    echo "<h2>Data is stored!</h2>";
-}
-else
-{
-    echo "<h2>Error data is not stored, please try again!</h2>";
-}
+    if($result == true)
+    {
+        echo "<h2>Data is stored!</h2>";
+    }
+    else
+    {
+        echo "<h2>Error data is not stored, please try again!</h2>";
+    }
 
 ?>

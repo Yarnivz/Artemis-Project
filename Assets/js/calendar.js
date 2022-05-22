@@ -598,7 +598,6 @@ function theFunction() {
 
 
 
-
   //Calling The Next Month Function
   Calendar.prototype.nextMonth = function() {
     this.current.add(1, "months");
@@ -625,7 +624,7 @@ function theFunction() {
 
 
 
-
+  
   //Calling The Previous Month Function
   Calendar.prototype.prevMonth = function() {
     this.current.subtract(1, "months");
@@ -796,16 +795,6 @@ function theFunction() {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // Getting the Customer from the database
 
 function showUser()
@@ -857,6 +846,10 @@ $("").submit(function(e){
 
 })
 
+
+
+
+
 // Adding event to database
 
 function addEventsToData()
@@ -881,5 +874,15 @@ function addEventsToData()
 
 }
 
+// $(document).ready(function(){
+
+//   $("input").keyup(function(){
+//       var name = $("input").val();
+//       $.post("")
+
+//   });
+
+
+// });
 
 

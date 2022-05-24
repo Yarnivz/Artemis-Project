@@ -14,7 +14,7 @@
 
     $sqlInsert = "INSERT INTO `Users` (`firstName`, `lastName`,`fullname`, `gender`, `email`, `password`, `birthdate`) VALUES ('$firstname', '$lastname', '$fullname', '$gender', '$email', MD5('$password'), '$birthdate');";
 
-    $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = '$password';";
+    $sqlQuery = "SELECT * FROM `Users` WHERE `Email` = '$email' AND `Password` = MD5('$password');";
 
     $result = mysqli_query($conn, $sqlInsert);
 
@@ -22,6 +22,7 @@
 
     $returnedRow = $queryResult -> fetch_all(MYSQLI_ASSOC);
     $creatingUser = $returnedRow[0];
+
 
 ?>
 

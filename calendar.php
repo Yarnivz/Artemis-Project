@@ -1,6 +1,5 @@
 <?php
   include "functions.php";
-  session_start();
   authenticate();
 ?>
 
@@ -32,9 +31,7 @@
     </section>
 
     
-    <!-- Library tool for the calendar  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
 
     <div id="calendar"></div>
 
@@ -46,7 +43,7 @@
         </legend>
         
         <!-- Form to Add an event into the calendar -->
-        <form name='myForm' onsubmit="theFunction()" action="calendar-insert-data.php" method="POST">
+        <form name='myForm' method="POST" action="calendar-insert-data.php" onsubmit="theFunction()">
         
           <table>
             
@@ -99,7 +96,9 @@
     </div>  
     
     
-    
+    <!-- Library tool for the calendar  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="Assets/js/calendar.js"></script>
   
   </body>

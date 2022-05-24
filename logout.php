@@ -6,5 +6,7 @@
     $_SESSION["isLoggedIn"] = False;
     $_SESSION["loggedUser"] = "";
 
-    header("Location: login1.php")
 ?>
+
+<script src="Assets/js/logout.js"></script>
+

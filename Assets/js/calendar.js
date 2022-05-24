@@ -598,6 +598,7 @@ function theFunction() {
 
 
 
+
   //Calling The Next Month Function
   Calendar.prototype.nextMonth = function() {
     this.current.add(1, "months");
@@ -624,7 +625,7 @@ function theFunction() {
 
 
 
-  
+
   //Calling The Previous Month Function
   Calendar.prototype.prevMonth = function() {
     this.current.subtract(1, "months");
@@ -713,6 +714,7 @@ function theFunction() {
   if (data === null) 
   {
     data = [];
+    window.location.href = "localstorage.php";
   }
   
   //Only the required data will be stored under these conditions !
@@ -735,7 +737,7 @@ function theFunction() {
     console.log(a);
   }
 
-  localStorage.setItem("data", JSON.stringify(data));
+  //localStorage.setItem("data", JSON.stringify(data));
 
 
   //An example of 
@@ -786,12 +788,22 @@ function theFunction() {
 
       var calendar = new Calendar("#calendar", data);
 
-      document.myForm.eventName.value = "";
-      document.myForm.eventType.value = "";
-      document.myForm.eventDate.value = "";
+      // document.myForm.eventName.value = "";
+      // document.myForm.eventType.value = "";
+      // document.myForm.eventDate.value = "";
 
       toggleForm();
     }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -823,32 +835,28 @@ function showUser()
 
 // Inserting the Events to the database
 
-$("").submit(function(e){
-    e.preventDefault();
+// $("").submit(function(e){
+//     e.preventDefault();
 
-    $.post(
-        'calendar-insert-data.php',
-          $("form : input").serializeArray(),
-        function(result)
-        {
-          if(result === "success")
-          {
-            $("#result").html("Successful Entry");
-          }
-          else
-          {
+//     $.post(
+//         'calendar-insert-data.php',
+//           $("form : input").serializeArray(),
+//         function(result)
+//         {
+//           if(result === "success")
+//           {
+//             $("#result").html("Successful Entry");
+//           }
+//           else
+//           {
 
-          }
+//           }
 
-        }
+//         }
 
-    )
+//     )
 
-})
-
-
-
-
+// })
 
 // Adding event to database
 
@@ -874,15 +882,5 @@ function addEventsToData()
 
 }
 
-// $(document).ready(function(){
-
-//   $("input").keyup(function(){
-//       var name = $("input").val();
-//       $.post("")
-
-//   });
-
-
-// });
 
 

@@ -1,28 +1,43 @@
-<?php
-    
-    include "Assets/database/connection.php";
+<?php 
+include "Assets/database/connection.php";
+$conn = dbConnection();
+session_start();
 
-    $eventName = $_POST['Name'];
-    $eventType = $_POST['Type'];
-    $date = $_POST['Date'];
+$eventName = $_POST["eventName"];
+$eventType = $_POST["eventType"];
+$date = $_POST["eventDate"];
 
-    $conn = dbConnection();
+var_dump($eventName);
+var_dump($eventType);
+var_dump($date);
+echo "<br>";
 
-    $sql = "INSERT INTO `Events` (`Name`, `Type`, `Date`) VALUES ('$eventName','$eventType', '$date');";
+$userID = $_SESSION["loggedUser"]["UserId"];
 
-    $sqlQuery = "SELECT * FROM `Events` WHERE `Name` = $eventName AND `Type` = '$eventType' AND `Date` = $date;";
+$_SESSION["addEvent"]["eventName"] = $eventName;
+$_SESSION["addEvent"]["eventType"] = $eventType;
+$_SESSION["addEvent"]["date"] = $date;
 
-    $result = mysqli_query($conn, $sql);
-    $queryResult = mysqli_query($conn, $sqlQuery);
 
+$sqlQuery = "SELECT CategoryID FROM event_category WHERE `Name` = '$eventType';";
+$queryResult = mysqli_query($conn,$sqlQuery);
+$returnedRow = $queryResult -> fetch_all(MYSQLI_ASSOC);
+$eventID = $returnedRow[0]["CategoryID"];
 
-    if($result == true)
-    {
-        echo "<h2>Data is stored!</h2>";
-    }
-    else
-    {
-        echo "<h2>Error data is not stored, please try again!</h2>";
-    }
+var_dump($userID);
+$sqlInsert = "INSERT INTO Events (`Name`, `EventCategory`, `Date`, `UserID`) VALUES ('$eventName','$eventID', '$date', '$userID');";
+
+$result = mysqli_query($conn, $sqlInsert);
+
+if($result != False)
+{
+    echo "<h2>Stored into the data</h2>";
+    header("Location: localstorage.php");
+}
+else
+{
+    echo "<h2>Unstored in the data</h2>";
+    header("Location: localstorage.php");
+}
 
 ?>

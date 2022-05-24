@@ -16,24 +16,25 @@
     // fetching the json data, parsing to an assoc array
     $json_data = file_get_contents("./assets/API/gifts.json");
     $products = json_decode($json_data, JSON_OBJECT_AS_ARRAY);
-    
+    // var_dump($products);
+    // die();
+
     foreach ($products as $product) {
         
-        $ProductName = $product["ProductName"];
-        $Shop = $product["Shop"];
-        $Price = $product["Price"];
-        $Website= $product["Website"];
-        $ImageURL= $product["ImageURL"];
-        $Preference= $product["Preference"];
+        $productName = $product["ProductName"];
+        $shop = $product["Shop"];
+        $price = $product["Price"];
+        $website= $product["Website"];
+        $imageURL= $product["ImageURL"];
+        $preference= $product["Preference"];
+       
         
-        
-        
-        
-        $sqlQuery = "INSERT INTO Gifts(ProductName, Shop, Price, Website, ImageURL, Preference) 
-                      VALUES('$ProductName','$Shop','$Price','$Website','$ImageURL', $Preference)";
+        $sqlQuery = "INSERT INTO `Gifts`(`ProductName`, `Shop`, `Price`, `Website`, `ImageURL`, `Preference`) VALUES('$productName','$shop','$price','$website','$imageURL', '$preference')";
         $result = mysqli_query($conn, $sqlQuery);
+        var_dump($result);
         
     }
+   
    
 
 ?>

@@ -79,9 +79,10 @@ FOREIGN KEY (UserID, GuestID) REFERENCES Guests(UserID, GuestID)
 CREATE TABLE Gifts (
 `GiftID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `ProductName` VARCHAR(50) NOT NULL,
+`Shop` VARCHAR(1000),
 `Price` DOUBLE NOT NULL,
-`ImageURL` VARCHAR(1000),
 `Website` VARCHAR(1000),
+`ImageURL` VARCHAR(1000),
 `Preference` INT,
 FOREIGN KEY ( Preference) REFERENCES Preferences( PreferenceID)
 );

@@ -52,10 +52,10 @@ CREATE TABLE Event_Category (
 CREATE TABLE Guests (
 `UserID` INT NOT NULL,
 `GuestID` INT NOT NULL,
-`FirstName` VARCHAR(50) NOT NULL,
-`LastName` VARCHAR(50),
-`Preference1` INT,
-`Preference2` INT,
+FirstName VARCHAR(50) NOT NULL,
+LastName VARCHAR(50),
+Preference1 INT,
+Preference2 INT,
 PRIMARY KEY (UserID, GuestID),
 FOREIGN KEY (UserID) REFERENCES Users(UserID),
 FOREIGN KEY (Preference1) REFERENCES Preferences(PreferenceID),
@@ -79,8 +79,8 @@ FOREIGN KEY (UserID, GuestID) REFERENCES Guests(UserID, GuestID)
 CREATE TABLE Gifts (
 `GiftID` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `ProductName` VARCHAR(50) NOT NULL,
-`Shop` VARCHAR(50) NOT NULL,
-`Price` DOUBLE NOT NULL,
+`Price` DOUBLE NOT NULL
+
 `Website` VARCHAR(1000),
 `Preference` INT,
 FOREIGN KEY ( Preference) REFERENCES Preferences( PreferenceID)

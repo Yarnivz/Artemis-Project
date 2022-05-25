@@ -32,8 +32,8 @@
   }
   
   #calendar {
-    width: 30%;
-    height: 65%;
+    width: 25%;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -481,3 +481,79 @@
   @keyframes fadeOutShink  {
     to { opacity: 0; padding: 0px; height: 0px; }
   }
+
+  /*-- shoppinh --*/
+
+
+.shopping{
+
+    background-image: url(../images/background33\ copy.png);
+    background-size: contain;
+  
+}
+
+button{
+	width: 10%;
+	height: 30px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: rgb(0, 0, 0);
+	background: #2472470e;
+	font-size: 1.5em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+    font-family: calibri;
+    
+    
+   
+}
+button:hover{
+	background: #afd6ee;
+
+}
+.Portrait{
+
+  flex-basis: 60%;
+  
+}
+.Portrait img{
+
+  width: 10%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  box-shadow: 0 0.5rem 3rem rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  transform: translate(-50%);
+
+
+}
+
+
+.shoplist{
+  text-align: center;
+}
+
+.hero-btn1{
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 12px 34px;
+  font-size: 13px;
+  background: #ffffff;
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+.hero-btn1:hover{
+  background: black;
+  transition: 1s;
+  color: white;
+}

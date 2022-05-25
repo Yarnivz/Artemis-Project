@@ -7,10 +7,6 @@ $eventName = $_POST["eventName"];
 $eventType = $_POST["eventType"];
 $date = $_POST["eventDate"];
 
-var_dump($eventName);
-var_dump($eventType);
-var_dump($date);
-echo "<br>";
 
 $userID = $_SESSION["loggedUser"]["UserId"];
 
@@ -24,11 +20,15 @@ $queryResult = mysqli_query($conn,$sqlQuery);
 $returnedRow = $queryResult -> fetch_all(MYSQLI_ASSOC);
 $eventID = $returnedRow[0]["CategoryID"];
 
+var_dump($eventName);
+var_dump($eventID);
+var_dump($date);
 var_dump($userID);
+echo "<br>";
 $sqlInsert = "INSERT INTO Events (`Name`, `EventCategory`, `Date`, `UserID`) VALUES ('$eventName','$eventID', '$date', '$userID');";
 
 $result = mysqli_query($conn, $sqlInsert);
-
+var_dump($result);
 if($result != False)
 {
     echo "<h2>Stored into the data</h2>";

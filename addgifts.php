@@ -34,8 +34,7 @@
         var_dump($result);
         
     }
-   
-   
+    header("Location: calendar.php");
 
 ?>
 </body>

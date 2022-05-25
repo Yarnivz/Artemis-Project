@@ -33,6 +33,7 @@
                 echo "Login Succesful!";
                 $_SESSION["isLoggedIn"] = True;
                 $_SESSION["loggedUser"] = $loggedUser;
+                $_SESSION["creatingUser"] = $loggedUser;
                 header("Location: calendar.php");
             }
         

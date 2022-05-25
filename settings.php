@@ -84,7 +84,11 @@
 
                     </br>
                     </br>
-                
+
+                    
+                    <form method="POST" action = "preference1.php">
+                        <button type="submit" class="set-out"> Change Gift Preferences </button>
+                    </form>
 
 
                     <form method="POST" action = "logout.php">

@@ -760,6 +760,7 @@ function theFunction() {
 
     if (b) {
       var c = data.splice(a, 1);
+      //window.location.href = "calendar-delete-data.php";
     
       /*for(var z in data)
       {

@@ -5,6 +5,7 @@
 
     $_SESSION["isLoggedIn"] = False;
     $_SESSION["loggedUser"] = "";
+    $_SESSION["creatingUser"] = "";
 
 ?>
 

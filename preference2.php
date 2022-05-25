@@ -24,10 +24,12 @@
 
     $currentUser = $_SESSION["creatingUser"]["UserId"];
 
+    $sqlDelete = "DELETE FROM `User_Preferences` WHERE `UserId` = '$currentUser';";
     $sqlInsert1 = "INSERT INTO `User_Preferences` (`UserID`, `PreferenceID`) VALUES ('$currentUser','$prefID1');";
     $sqlInsert2 = "INSERT INTO `User_Preferences` (`UserID`, `PreferenceID`) VALUES ('$currentUser','$prefID2');";
     $sqlInsert3 = "INSERT INTO `User_Preferences` (`UserID`, `PreferenceID`) VALUES ('$currentUser','$prefID3');";
 
+    mysqli_query($conn,$sqlDelete);
     mysqli_query($conn,$sqlInsert1);
     mysqli_query($conn,$sqlInsert2);
     mysqli_query($conn,$sqlInsert3);

@@ -1,28 +1,36 @@
-<?php
-    
+<?php 
     include "Assets/database/connection.php";
-
-    $eventName = $_POST['Name'];
-    $eventType = $_POST['Type'];
-    $date = $_POST['Date'];
-
     $conn = dbConnection();
+    session_start();
 
-    $sqlDelete = "DELETE FROM `Events` WHERE `Name` = $eventName AND `Type` = '$eventType' AND `Date` = $date;";
+    $userID = $_SESSION["loggedUser"]["UserId"];
 
-    $sqlQuery = "SELECT * FROM `Events` WHERE `Name` = $eventName AND `Type` = '$eventType' AND `Date` = $date;";
+    $sqlQuery = "SELECT * FROM Events WHERE `UserId` = '$userID';";
+    $queryResult = mysqli_query($conn,$sqlQuery);
+    $events = $queryResult -> fetch_all(MYSQLI_ASSOC);
 
-    $result = mysqli_query($conn, $sqlDelete);
-    $queryResult = mysqli_query($conn, $sqlQuery);
+    var_dump($userID);
+    foreach($events as $event) {
+        $eventName = $event["Name"];
+        $eventDate = $event["Date"];
+        $catID = $event["EventCategory"];
 
+        var_dump($eventName);
+        echo "<br>";
+        var_dump($eventDate);
+        echo "<br>";
+        var_dump($catID);
+        echo "<br>";
 
-    if($result == true)
-    {
-        echo "<h2>Data deletion completed!</h2>";
-    }
-    else
-    {
-        echo "<h2>Data deletion failed!</h2>";
+        $sqlDelete = "DELETE FROM `Events` WHERE `Name` = '$eventName' AND `EventCategory` = '$catID' AND `Date` = '$eventDate' AND `UserId` = '$userID';";
+    
+        $result = mysqli_query($conn, $sqlDelete);
+
+        if($result != false)
+        {
+            echo "<h2>Deletion succesful</h2>";
+            header("Location: localstorage.php");
+        }
     }
 
 ?>

@@ -19,7 +19,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content-ppu="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/settings.css" type="text/css">
 </head>
 <body>
 
@@ -87,9 +87,12 @@
 
                     
                     <form method="POST" action = "preference1.php">
-                        <button type="submit" class="set-out"> Change Gift Preferences </button>
+                        <button type="submit" class="set-out"> Preferences </button>
                     </form>
 
+                    <form method="POST" action = "calendar-delete-data.php">
+                        <button type="submit" class="set-out"> Delete events </button>
+                    </form>
 
                     <form method="POST" action = "logout.php">
                         <button type="submit" class="set-out"> Log out </button>
